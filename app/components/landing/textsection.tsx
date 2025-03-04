@@ -30,7 +30,7 @@ export default function InfoSection() {
         <div className="bg-white rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-all flex flex-col justify-between h-full">
           <div>
             <h2 className="text-2xl  font-bold text-left sm:text-left">UNE <br /> PHILOSOPHIE</h2>
-            <div className="border-t-8 border-[#c3002f] w-1/5 my-6 mx-auto"></div>
+            <div className="border-t-8 border-[#c3002f] w-1/5 my-6 text-left"></div>
             <p className="text-gray-600 text-base sm:text-lg  sm:text-left">
               Notre philosophie est résumée en quatre mots : « Engagement envers la satisfaction de la clientèle ».  
               Cet engagement se traduit par des efforts diligents de notre part pour fournir à nos clients des produits 
