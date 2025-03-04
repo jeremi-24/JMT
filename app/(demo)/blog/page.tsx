@@ -10,76 +10,74 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Section Hero Banner */}
-      
-
       {/* Section Liste des Documents */}
       <div className="container mx-auto px-4 py-10">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-       NOS ACTUALITES
+          NOS ACTUALITÉS
         </h2>
         <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div>
 
         {loading && <p className="text-gray-500">Chargement des documents...</p>}
         {error && <p className="text-red-500">{error}</p>}
-     
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {documents.map((doc, index) => (
-  <motion.div
-    key={doc.id}
-    className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{
-      delay: index * 0.1,
-      duration: 0.5,
-      ease: "easeOut",
-    }}
-    whileHover={{ scale: 1.03 }}
-    whileTap={{ scale: 0.98 }}
-  >
-    {/* Afficher les images si doc.image est un tableau */}
-    <div className="w-full h-48 overflow-hidden">
-      {Array.isArray(doc.image) ? (
-        doc.image.map((imageUrl, idx) => (
-          <Image
-            key={idx}
-            src={imageUrl}
-            alt={doc.titre}
-            width={300}
-            height={200}
-            className="w-full h-48 object-cover"
-          />
-        ))
-      ) : (
-        <Image
-          src={doc.image}
-          alt={doc.titre}
-          width={300}
-          height={200}
-          className="w-full h-48 object-cover"
-        />
-      )}
-    </div>
-    <div className="p-5">
-      <h3 className="text-mx font-semibold text-gray-900">
-        {doc.titre}
-      </h3>
-      
-      <p className="text-gray-500 text-sm">
-        {new Date(doc.date).toLocaleDateString()}
-      </p>
-      <p className="text-gray-700 mt-2 line-clamp-3">
-        {doc.texte}
-      </p>
-    </div>
-    {/* Lien vers chaque document */}
-    <Link href={`/blog/${doc.id.toLowerCase()}`}>
-      <span>Lire l&apos;article</span>
-    </Link>
-  </motion.div>
-))}
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {documents.map((doc, index) => (
+            <motion.div
+              key={doc.id}
+              className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+                ease: "easeOut",
+              }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="w-full h-48 overflow-hidden">
+                {Array.isArray(doc.image) ? (
+                  doc.image.map((imageUrl, idx) => (
+                    <Image
+                      key={idx}
+                      src={imageUrl}
+                      alt={doc.titre}
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                  ))
+                ) : (
+                  <Image
+                    src={doc.image}
+                    alt={doc.titre}
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {doc.titre}
+                </h3>
+                <p className="text-gray-500 text-sm">
+                  {new Date(doc.date).toLocaleDateString()}
+                </p>
+                <p className="text-gray-700 mt-2 line-clamp-3">
+                  {doc.texte}
+                </p>
+              </div>
+              {/* Bouton Lire l'article */}
+              <div className="p-5">
+                <Link href={`/blog/${doc.id.toLowerCase()}`}>
+                  <span className="inline-block bg-[#c3002f] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a00028] transition">
+                    Lire l&apos;article
+                  </span>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
