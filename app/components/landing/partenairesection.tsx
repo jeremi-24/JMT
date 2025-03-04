@@ -28,8 +28,8 @@ const CarrouselPartenaire = () => {
               <Image
                 src={`/${logo}`}
                 alt={`Partenaire ${index + 1}`}
-                width={150}
-                height={100}
+                width={250}
+                height={200}
                 objectFit="contain"
               />
             </div>
