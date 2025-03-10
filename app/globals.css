@@ -44,11 +44,4 @@ body {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Peugeot';
-  src: url('/PeugeotNew-Bold.otf') ;
-    
-  font-weight: bold;
-  font-style: normal;
-}
 

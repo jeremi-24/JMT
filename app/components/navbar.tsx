@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
   <li key={item} className="px-2 py-1 text-xs transition-all">
     <Link 
       href={item === "Accueil" ? "/" : `/${item.toLowerCase()}`}
-      className="hover:text-[#c3002f] hover:text-scale-105 transition-all"
+      className="hover:text-[#c3002f] hover:font-bold transition-all"
     >
       {item}
     </Link>

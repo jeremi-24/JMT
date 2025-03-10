@@ -14,7 +14,7 @@ interface Car {
 // Fonction pour récupérer toutes les voitures Nissan
 export const getNissanCars = async () => {
   try {
-    const categories = ["Crossover", "Berlines","SUV","Utilitaire","super suv","bus"];
+    const categories = ["Crossover", "Berlines","SUV","UTILITAIRE","Super suv","BUS"];
     const cars: Car[] = [];
 
     for (const category of categories) {

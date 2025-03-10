@@ -12,7 +12,7 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
   const car = cars.find((c) => c.name.toLowerCase() === resolvedParams.name);
 
   if (!car) {
-    return <div className="text-center mt-10">Voiture non trouvée 😢</div>;
+    return <div className="text-center mt-10">Voiture non trouvée 😢 </div>;
   }
 
   // Définit l'image principale par défaut

@@ -77,10 +77,7 @@ const CarrouselSection: React.FC = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-4xl font-bold  text-left">NOS VEHICULES NISSAN</h2>
        
-        <button  onClick={handleNavigate}  className="flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-red-900 transition">
-          <span className="hidden md:inline">Voir la gamme</span> {/* Texte masqué sur mobile */}
-          <ArrowUpRight size={20} />
-        </button>
+        
       </div>
       <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div> {/* Séparateur rouge */}
 
@@ -98,6 +95,10 @@ const CarrouselSection: React.FC = () => {
           </div>
         ))}
       </Slider>
+      <button  onClick={handleNavigate}  className="flex items-center gap-2 rounded-full px-6 py-3 mt-8 bg-[#c3002f] text-white hover:bg-red-900 transition">
+          <span className="hidden md:inline">Voir la gamme</span> {/* Texte masqué sur mobile */}
+          <ArrowUpRight size={20} />
+        </button>
     </div>
   );
 };
