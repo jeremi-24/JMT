@@ -95,10 +95,14 @@ const CarrouselSection: React.FC = () => {
           </div>
         ))}
       </Slider>
-      <button  onClick={handleNavigate}  className="flex items-center gap-2 rounded-full px-6 py-3 mt-8 bg-[#c3002f] text-white hover:bg-red-900 transition">
-          <span className="hidden md:inline">Voir la gamme</span> {/* Texte masqué sur mobile */}
-          <ArrowUpRight size={20} />
-        </button>
+      <button  
+  onClick={handleNavigate}  
+  className="flex items-center gap-2 rounded-full px-6 py-3 mt-8 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
+>
+  <span className="hidden md:inline">Voir la gamme</span> {/* Texte masqué sur mobile */}
+  <ArrowUpRight size={20} />
+</button>
+
     </div>
   );
 };

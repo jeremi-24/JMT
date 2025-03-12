@@ -4,7 +4,7 @@ function visit() {
   return (
    <section className="container mx-auto p-4 my-8">
     <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl md:text-2xl font-bold text-left">VISITE VIRTUELLE JAPAN MOTORS TOGO</h2>
+        <h2 className="text-4xl  font-bold text-left">VISITE VIRTUELLE </h2>
        
       </div>
       <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div> {/* Séparateur rouge */}

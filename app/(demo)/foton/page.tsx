@@ -29,6 +29,7 @@ function Page() {
   useEffect(() => {
     const interval1 = setInterval(goToNext1, 4000); // 4 secondes
     return () => clearInterval(interval1);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Carrousel 2
@@ -53,6 +54,7 @@ function Page() {
   useEffect(() => {
     const interval2 = setInterval(goToNext2, 4000); // 4 secondes
     return () => clearInterval(interval2);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -64,7 +66,7 @@ function Page() {
           style={{ transform: `translateX(-${currentIndex1 * 100}%)` }}
         >
           {slides1.map((slide) => (
-            <div key={slide.id} className="w-full max-h-92 flex-shrink-0">
+            <div key={slide.id} className="w-full max-h-70 flex-shrink-0">
               <Image
                 src={slide.image}
                 alt={slide.alt}

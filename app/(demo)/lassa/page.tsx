@@ -1,6 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Slider from "react-slick";
+const heroImages = [
+  "https://japanmotorstogo.com/wp-content/uploads/2022/03/LASSA-Benin_DrivewaysSport-min.jpeg",
+  "https://japanmotorstogo.com/wp-content/uploads/2022/03/LASSA-Benin_TranswayAT.jpeg",
+  "https://japanmotorstogo.com/wp-content/uploads/2022/03/LAS-Gana-Web-Site_1920x664px_Greenways-min-min.jpeg",
+  ];
 
 type Category = "Véhicule Passager" | "SUV" | "Utilitaire";
 
@@ -39,12 +45,47 @@ export default function TireList() {
     return () => clearInterval(timer);
   }, []);
 
+
+   
+  
+   
+  
+    const heroSettings = {
+      dots: true,
+      infinite: true,
+      speed: 800,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      arrows: false,
+    };
+
   return (
-    <div className="max-w-7xl mt-10 mx-auto p-4 flex flex-col md:flex-row">
+    <div>
+      {/* Hero Slider */}
+            <div className="mb-5">
+              <Slider {...heroSettings}>
+                {heroImages.map((image, index) => (
+                  <div key={index} className="w-full h-[500px]">
+                    <Image
+                      src={image}
+                      alt={`Hero Image ${index + 1}`}
+                      width={1200}
+                      height={50}
+                      layout="responsive"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+    <div className="max-w-7xl mt-5 mx-auto p-4 flex flex-col md:flex-row">
       {/* Section gauche */}
       <div className="md:w-1/3 md:pr-6">
         <h1 className="text-3xl font-bold text-left mb-4">ROULEZ EN SÉCURITÉ AVEC NOS PNEUS LASSA</h1>
-        <h2 className="text-xl text-justify mb-6">
+        <h2 className="text-xl  mb-6">
           Proposant une gamme étonnamment large de classiques éprouvés sur le marché ainsi que de nouveaux modèles exceptionnels,
           Lassa est un produit de Brisa Bridgestone Sabancı Tyre Manufacturing Trading Inc. et propose un grand choix de pneus
           grand public et commerciaux.
@@ -116,6 +157,7 @@ export default function TireList() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

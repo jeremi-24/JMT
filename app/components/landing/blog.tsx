@@ -44,7 +44,7 @@ const NewsGallery: React.FC = () => {
           
           <div className='flex justify-between items-center mb-3' >
               <h2 className="text-4xl  font-bold text-left">ACTUALITES</h2>
-              <button className="flex items-center gap-2 rounded-full px-6 py-5 bg-[#c3002f] text-white hover:bg-red-900 transition">
+              <button className="flex items-center gap-2 rounded-full px-6 py-3 mt-8 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition">
           <span className="hidden md:inline">les actualités</span> {/* Texte masqué sur mobile */}
           <ArrowUpRight size={20} />
         </button>
