@@ -61,7 +61,7 @@ const CarCard: React.FC<CarCardProps> = ({ images, name, description }) => {
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-black text-2xl font-bold">{name}</h3>
           </div>
-          <p className="font-[var(--font-peugeot)] truncate lowercase text-gray-700 text-base">{description}</p>
+         
         </div>
       </div>
     </Link>
