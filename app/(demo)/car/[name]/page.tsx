@@ -1,15 +1,19 @@
 "use client";
 import { use, useState } from "react";
 import Image from "next/image";
-import { useNissanCars } from "@/app/context/NissanContext";
+import { useCarContext } from "@/app/context/CarContext"; 
+
 
 const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
   const resolvedParams = use(params); // Déstructure la promesse
-  const { cars } = useNissanCars();
+  const { peugeotCars, nissanCars } = useCarContext();
+
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   // Recherche de la voiture par son nom
-  const car = cars.find((c) => c.name.toLowerCase() === resolvedParams.name);
+  const allCars = [...peugeotCars, ...nissanCars];
+const car = allCars.find((c) => c.name.toLowerCase() === resolvedParams.name);
+
 
   if (!car) {
     return <div className="text-center mt-10">Voiture non trouvée 😢 </div>;

@@ -11,6 +11,7 @@ import { CanonProvider } from "./context/CanonContext";
 import { FotonProvider } from "./context/FotonContext";
 import { BlogProvider } from "./context/BlogContext";
 import { PeugeotProvider } from "./context/PeugeotContext";
+import { CarProvider } from "./context/CarContext";
 
 // ✅ Utilisation correcte de next/font/local
 const peugeotFont = localFont({
@@ -47,10 +48,12 @@ export default function RootLayout({
             <FotonProvider>
               <BlogProvider>
               <PeugeotProvider>
+              <CarProvider>
                 <Navbar />
                 <div className="pt-[90px] px-4 md:px-8 lg:px-0">{children}</div>
 
                 <Footer />
+              </CarProvider>
               </PeugeotProvider>
               </BlogProvider>
             </FotonProvider>
