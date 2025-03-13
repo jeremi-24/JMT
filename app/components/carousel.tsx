@@ -26,6 +26,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(goToNext, 4000); // 4000 ms = 4 secondes
     return () => clearInterval(interval); // Nettoyer l'intervalle à la destruction du composant
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

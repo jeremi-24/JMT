@@ -9,7 +9,7 @@ interface CarCardProps {
   badgeText: string;
 }
 
-const CarCard: React.FC<CarCardProps> = ({ images, name, description }) => {
+const CarCard: React.FC<CarCardProps> = ({ images, name }) => {
   const [hoverIndex, setHoverIndex] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent) => {
