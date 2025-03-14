@@ -77,16 +77,16 @@ const Footer: React.FC = () => {
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between border-t border-gray-600 pt-4">
   <p className="text-sm text-gray-400">© Japan Motors Togo – Powered by Sace Agency</p>
   <div className="flex space-x-4 mt-4 md:mt-0">
-    <Link href="https://www.facebook.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition">
+    <Link href="https://www.facebook.com/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition">
       <FaFacebook className="w-5 h-5" />
     </Link>
-    <Link href="https://www.instagram.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-pink-600 hover:bg-pink-600 hover:text-white transition">
+    <Link href="https://www.instagram.com/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-pink-600 hover:bg-pink-600 hover:text-white transition">
       <FaInstagram className="w-5 h-5" />
     </Link>
-    <Link href="https://www.linkedin.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-700 hover:bg-blue-700 hover:text-white transition">
+    <Link href="https://tg.linkedin.com/company/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-700 hover:bg-blue-700 hover:text-white transition">
       <FaLinkedin className="w-5 h-5" />
     </Link>
-    <Link href="https://www.tiktok.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-black hover:bg-slate-400 hover:text-white transition">
+    <Link href="https://www.tiktok.com/@japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-black hover:bg-slate-400 hover:text-white transition">
       <FaTiktok className="w-5 h-5" />
     </Link>
   </div>
