@@ -74,7 +74,7 @@ const CarrouselSection: React.FC = () => {
           </div>
         ))}
       </Slider>
-      <button className="flex items-center gap-2 mt-8 rounded-full px-6 py-3 bg-[#c3002f]   text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
+      <button className="flex items-center gap-2  w-[350px] mt-8 rounded-full px-6 py-3 bg-white  text-[#c3002f]  justify-center text-center hover:bg-[#c3002f] hover:text-white border border-[#c3002f] hover:border-red-700  transition">
           <span className="hidden md:inline">Voir la gamme</span>
           <ArrowUpRight size={20} />
         </button>

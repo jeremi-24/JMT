@@ -6,10 +6,11 @@ import CarCard from "@/app/components/card";
 import Image from "next/image";
 
 const heroImages = [
-  "/slider-1.jpg",
-  "/slider-2.jpg",
-  "/slider-1.jpg",
-  "/slider-2.jpg",
+  "/Slider Nissan - 06.jpg",
+  "/Slider Nissan - 01.jpg",
+  "/Slider Nissan - 06.jpg",
+  "/Slider Nissan - 00.jpg",
+  "/Slider Nissan - 05.webp",
 ];
 
 const Home: React.FC = () => {
@@ -64,7 +65,8 @@ const Home: React.FC = () => {
   }, {} as Record<string, typeof cars>);
 
   return (
-    <div className="container mx-auto p-4 my-8">
+
+    <main>
       {/* Hero Slider */}
       <div className="mb-10">
         <Slider {...heroSettings}>
@@ -82,9 +84,11 @@ const Home: React.FC = () => {
           ))}
         </Slider>
       </div>
+    <div className="container mx-auto p-4 my-8">
+      
 
       {/* Section des voitures */}
-      <h2 className="text-4xl font-bold text-left mb-8">NOS VÉHICULES NISSAN</h2>
+    
       <div onWheel={handleWheel}>
         {Object.entries(groupedCars).map(([badge, cars]) => {
           // Ajuster les paramètres du slider dynamiquement
@@ -97,7 +101,7 @@ const Home: React.FC = () => {
 
           return (
             <div key={badge} className="mb-10">
-              <h3 className="text-2xl font-semibold mb-4">Nos {badge}</h3>
+              <h3 className="text-4xl font-semibold mb-4">Nos {badge}</h3>
               <Slider {...dynamicSettings}>
                 {cars.map((car, index) => (
                   <div key={index} className="px-2 flex h-full">
@@ -115,6 +119,7 @@ const Home: React.FC = () => {
         })}
       </div>
     </div>
+    </main>
   );
 };
 

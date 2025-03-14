@@ -44,7 +44,7 @@ const CarCard: React.FC<CarCardProps> = ({ images, name }) => {
             className="transition-all duration-300 ease-in-out group-hover:opacity-90"
           />
           {/* Barre d'indication segmentée */}
-          <div className="absolute bottom-0 left-0 w-full h-1 flex">
+          <div className="absolute bottom-0 left-0 w-full h-0.5 flex">
             {images.map((_, index) => (
               <div
                 key={index}
@@ -59,7 +59,7 @@ const CarCard: React.FC<CarCardProps> = ({ images, name }) => {
         {/* Contenu texte */}
         <div className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-black text-2xl font-bold">{name}</h3>
+            <h3 className="text-black lowercase text-2xl font-bold">{name}</h3>
           </div>
          
         </div>

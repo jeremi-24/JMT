@@ -1,75 +1,82 @@
 "use client";
+import { useRef } from "react";
+import Slider from "react-slick";
+import { useLassaCars } from "@/app/context/LassaContext";
+import CarCard from "@/app/components/card";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useFoton } from "@/app/context/FotonContext";
-import { motion } from "framer-motion";
 
-function Page() {
 
-    const { documents, loading, error } = useFoton();
-  // Carrousel 1
-  const [currentIndex1, setCurrentIndex1] = useState(0);
-  const slides1 = [
-    { id: 1, image: "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227131546_banner_26_1318470997-min.jpg", alt: "Slide 1" },
-    { id: 2, image: "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227132622_banner_26_1047007841-min.jpg", alt: "Slide 2" },
-    { id: 3, image: "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227131546_banner_26_1318470997-min.jpg", alt: "Slide 3" },
-    { id: 4, image: "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227132622_banner_26_1047007841-min.jpg", alt: "Slide 4" },
-  ];
+const heroImages = [ 
+  "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227131546_banner_26_1318470997-min.jpg",
+  "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227132622_banner_26_1047007841-min.jpg",
+  "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227131546_banner_26_1318470997-min.jpg",
+  "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227132622_banner_26_1047007841-min.jpg"
+];
 
-  const goToNext1 = () => {
-    setCurrentIndex1((prevIndex) => (prevIndex + 1) % slides1.length);
+
+
+const Home: React.FC = () => {
+  const sliderRef = useRef<Slider | null>(null);
+  const { cars, loading, error } = useLassaCars();
+
+  const baseSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 1440, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+    ],
   };
 
-  const goToPrev1 = () => {
-    setCurrentIndex1(
-      (prevIndex) => (prevIndex - 1 + slides1.length) % slides1.length
-    );
+  const heroSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
   };
 
-  useEffect(() => {
-    const interval1 = setInterval(goToNext1, 4000); // 4 secondes
-    return () => clearInterval(interval1);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Carrousel 2
-  const [currentIndex2, setCurrentIndex2] = useState(0);
-  const slides2 = [
-    { id: 1, image: "https://japanmotorstogo.com/wp-content/uploads/2019/07/foton.jpg", alt: "Slide 5" },
-    { id: 2, image: "https://japanmotorstogo.com/wp-content/uploads/2019/07/foton2.jpg", alt: "Slide 6" },
-    { id: 3, image: "https://japanmotorstogo.com/wp-content/uploads/2019/07/foton.jpg", alt: "Slide 7" },
-    { id: 4, image: "https://japanmotorstogo.com/wp-content/uploads/2019/07/foton3.jpg", alt: "Slide 8" },
-  ];
-
-  const goToNext2 = () => {
-    setCurrentIndex2((prevIndex) => (prevIndex + 1) % slides2.length);
+  const handleWheel = (event: React.WheelEvent) => {
+    if (sliderRef.current) {
+      if (event.deltaY > 0) {
+        sliderRef.current.slickNext();
+      } else {
+        sliderRef.current.slickPrev();
+      }
+    }
   };
 
-  const goToPrev2 = () => {
-    setCurrentIndex2(
-      (prevIndex) => (prevIndex - 1 + slides2.length) % slides2.length
-    );
-  };
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur: {error}</div>;
 
-  useEffect(() => {
-    const interval2 = setInterval(goToNext2, 4000); // 4 secondes
-    return () => clearInterval(interval2);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // Regrouper les voitures par badge
+  const groupedCars = cars.reduce((acc, car) => {
+    if (!acc[car.badge]) acc[car.badge] = [];
+    acc[car.badge].push(car);
+    return acc;
+  }, {} as Record<string, typeof cars>);
 
   return (
-    <div>
-      {/* Carrousel 1 */}
-      <div className="relative overflow-hidden w-full mb-8">
-        <div
-          className="flex transition-transform duration-300"
-          style={{ transform: `translateX(-${currentIndex1 * 100}%)` }}
-        >
-          {slides1.map((slide) => (
-            <div key={slide.id} className="w-full max-h-70 flex-shrink-0">
+
+    <main>
+      {/* Hero Slider */}
+      <div className="mb-10">
+        <Slider {...heroSettings}>
+          {heroImages.map((image, index) => (
+            <div key={index} className="w-full h-[500px]">
               <Image
-                src={slide.image}
-                alt={slide.alt}
+                src={image}
+                alt={`Hero Image ${index + 1}`}
                 width={1200}
                 height={50}
                 layout="responsive"
@@ -77,122 +84,45 @@ function Page() {
               />
             </div>
           ))}
-        </div>
-        {/* Controls */}
-        <button
-          onClick={goToPrev1}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={goToNext1}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
-        >
-          &#10095;
-        </button>
-
-        {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slides1.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex1(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex1 ? "bg-white" : "bg-gray-400"
-              }`}
-            ></button>
-          ))}
-        </div>
+        </Slider>
       </div>
-{/* Section Liste des Documents */}
-<div className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl  font-semibold mb-6">Japan Motors Togo, representant officiel de Canon au Togo</h2>
-        <h4 className="text-2xl mb-6">Nos imprimantes Canon compactes et puissantes offrent des résultats exceptionnels depuis le confort de votre maison</h4>
+    <div className="container mx-auto p-4 my-8">
+      
 
-        {loading && <p className="text-gray-500">Chargement des documents...</p>}
-        {error && <p className="text-red-500">{error}</p>}
+      {/* Section des voitures */}
+    
+      <div onWheel={handleWheel}>
+        {Object.entries(groupedCars).map(([badge, cars]) => {
+          // Ajuster les paramètres du slider dynamiquement
+          const dynamicSettings = {
+            ...baseSettings,
+            slidesToShow: Math.min(baseSettings.slidesToShow, cars.length),
+            slidesToScroll: Math.min(baseSettings.slidesToScroll, cars.length),
+            infinite: cars.length > 1,
+          };
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {documents.map((doc, index) => (
-            <motion.div
-              key={doc.id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: index * 0.1,
-                duration: 0.5,
-                ease: "easeOut",
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Image
-                src={doc.image}
-                alt={doc.name}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{doc.name}</h3>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-      {/* Carrousel 2 */}
-      <div className="relative overflow-hidden w-full mb-8">
-        <div
-          className="flex transition-transform duration-300"
-          style={{ transform: `translateX(-${currentIndex2 * 100}%)` }}
-        >
-          {slides2.map((slide) => (
-            <div key={slide.id} className="w-full min-h-[50px] flex-shrink-0">
-              <Image
-                src={slide.image}
-                alt={slide.alt}
-                width={1200}
-                height={20}
-                layout="responsive"
-                className="object-cover"
-              />
+          return (
+            <div key={badge} className="mb-10">
+              <h3 className="text-4xl font-semibold mb-4">Nos {badge}</h3>
+              <Slider {...dynamicSettings}>
+                {cars.map((car, index) => (
+                  <div key={index} className="px-2 flex h-full">
+                    <CarCard
+                      images={car.images}
+                      name={car.name}
+                      description={car.description}
+                      badgeText={car.badge}
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
-          ))}
-        </div>
-        {/* Controls */}
-        <button
-          onClick={goToPrev2}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={goToNext2}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
-        >
-          &#10095;
-        </button>
-
-        {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slides2.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex2(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex2 ? "bg-white" : "bg-gray-400"
-              }`}
-            ></button>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
+    </main>
   );
-}
+};
 
-export default Page;
+export default Home;
