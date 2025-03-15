@@ -15,7 +15,7 @@ const CarrouselSection: React.FC = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 768,
@@ -35,7 +35,7 @@ const CarrouselSection: React.FC = () => {
         breakpoint: 1440,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToScroll: 1,
         },
       },
     ],

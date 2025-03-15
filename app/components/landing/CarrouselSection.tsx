@@ -24,7 +24,7 @@ const CarrouselSection: React.FC = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3, // Afficher 3 cartes par slide sur les grands écrans
-    slidesToScroll: 3, // Scroll de 3 cartes à la fois
+    slidesToScroll: 1, // Scroll de 3 cartes à la fois
     responsive: [
       {
         breakpoint: 768, // Pour les écrans plus petits
@@ -44,7 +44,7 @@ const CarrouselSection: React.FC = () => {
         breakpoint: 1440, // Pour les écrans plus grands
         settings: {
           slidesToShow: 4, // Afficher trois cartes par slide
-          slidesToScroll: 4,
+          slidesToScroll: 1,
         },
       },
     ],

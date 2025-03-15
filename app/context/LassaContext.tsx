@@ -11,9 +11,8 @@ interface LassaCarsContextType {
 
 interface Car {
   name: string;
-  description: string;
-  badge: string;
-  images: string[];
+  badge:string;
+  image: string;
 }
 
 const LassaCarsContext = createContext<LassaCarsContextType | undefined>(undefined);

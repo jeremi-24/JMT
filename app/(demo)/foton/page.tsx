@@ -102,16 +102,17 @@ const Home: React.FC = () => {
 
           return (
             <div key={badge} className="mb-10">
-              <h3 className="text-4xl font-semibold mb-4">Nos {badge}</h3>
+              <h3 className="text-4xl font-semibold mb-4">Nos PNEUS pour {badge}</h3>
               <Slider {...dynamicSettings}>
                 {cars.map((car, index) => (
                   <div key={index} className="px-2 flex h-full">
-                    <CarCard
-                      images={car.images}
-                      name={car.name}
-                      description={car.description}
-                      badgeText={car.badge}
-                    />
+                   <CarCard
+  images={[car.image]} 
+  name={car.name}
+  badgeText={car.badge}
+  description=""
+/>
+
                   </div>
                 ))}
               </Slider>

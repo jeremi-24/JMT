@@ -6,9 +6,8 @@ import { db } from "../firebase/config";
 
 interface Car {
   name: string;
-  description: string;
-  badge: string;
-  images: string[];
+  badge:string;
+  image: string;
 }
 
 // Fonction pour récupérer toutes les voitures Nissan
@@ -24,9 +23,8 @@ export const getLassaCars = async () => {
         // On n'inclut pas l'ID ici
         cars.push({
           name: doc.data().name,
-          description: doc.data().description,
           badge: doc.data().badge,
-          images: doc.data().images,
+          image: doc.data().image,
         });
       });
     }
