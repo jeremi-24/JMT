@@ -50,7 +50,7 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
         {/* Partie des détails de la voiture */}
         <div className="w-full md:w-1/3">
           <h1 className="text-3xl md:text-4xl font-bold">{car.titre}</h1>
-          <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">{car.date.toLocaleDateString()}</span>
+          <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">car.date</span>
           <p className="mt-4 text-gray-700 text-sm md:text-base">{car.texte}</p>
         </div>
       </div>
