@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { useNissanCars } from "@/app/context/NissanContext";
 import CarCard from "@/app/components/card";
 import Image from "next/image";
-
+import { LoaderCircle } from "lucide-react";
 const heroImages = [
   "/Slider Nissan - 06.jpg",
   "https://editorial-bkend.davinci-cms.com/storage/files/folders/ma-morocco/vehicles/juke/new/led-highlights-with-high-beam-assist-gallery-D.jpg",
@@ -54,7 +54,11 @@ const Home: React.FC = () => {
     }
   };
 
-  if (loading) return <div>Chargement...</div>;
+  if (loading)  return (
+        <div className="flex justify-center items-center h-screen">
+          <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+        </div>
+      );
   if (error) return <div>Erreur: {error}</div>;
 
   // Regrouper les voitures par badge
