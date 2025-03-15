@@ -59,7 +59,7 @@ const CarCard: React.FC<CarCardProps> = ({ images, name }) => {
         {/* Contenu texte */}
         <div className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-black capitalize text-2xl font-bold">{name}</h3>
+            <h3 className="text-black  text-xl ">{name}</h3>
           </div>
          
         </div>

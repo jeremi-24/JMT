@@ -64,7 +64,7 @@ const Carousel: React.FC = () => {
       </button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="hidden absolute bottom-4 left-1/2 transform -translate-x-1/2  space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}

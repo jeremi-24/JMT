@@ -6,9 +6,9 @@ export default function InfoSection() {
       {/* Contenu des blocs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Bloc 1 */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-all flex flex-col justify-between h-full">
+        <div className="bg-white rounded-2xl p-4 sm:p-3 hover:shadow-xl transition-all flex flex-col justify-between h-full">
           <div>
-            <h2 className="text-4xl  font-bold text-left sm:text-left">100 ANNÉES <br /> D’EXPÉRIENCES</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-left  sm:text-left">100 ANNÉES <br /> D’EXPÉRIENCES</h2>
             <div className="border-t-8 border-[#c3002f] w-1/5 my-6 text-left"></div>
             <p className="text-gray-600 text-base  text-justify sm:text-left">
               En 1965, la société a été créée sous le nom de Japan Motors Trading Company Limited, 
@@ -29,7 +29,7 @@ export default function InfoSection() {
         {/* Bloc 2 */}
         <div className="bg-white rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-all flex flex-col justify-between h-full">
           <div>
-            <h2 className="text-4xl  font-bold text-left sm:text-left">UNE <br /> PHILOSOPHIE</h2>
+            <h2 className="text-2xl md:text-4xl  font-bold text-left sm:text-left">UNE <br /> PHILOSOPHIE</h2>
             <div className="border-t-8 border-[#c3002f] w-1/5 my-6 text-left"></div>
             <p className="text-gray-600 text-base   sm:text-left">
               Notre philosophie est résumée en quatre mots : « Engagement envers la satisfaction de la clientèle ».  

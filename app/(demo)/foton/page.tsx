@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   const { cars, loading, error } = useLassaCars();
 
   const baseSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -77,10 +77,9 @@ const Home: React.FC = () => {
               <Image
                 src={image}
                 alt={`Hero Image ${index + 1}`}
-                width={1200}
-                height={50}
-                layout="responsive"
-                className="object-cover"
+               
+               layout="fill" // Remplit tout le conteneur
+    objectFit="cover"
               />
             </div>
           ))}

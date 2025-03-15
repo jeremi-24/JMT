@@ -22,6 +22,12 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 
   return (
     <div className="container mx-auto pt-10 pb-10 px-4">
+      {/* Détails de la voiture */}
+      <div className="w-full mt-6 mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold">NISSAN {car.name}</h1>
+          <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">{car.badge}</span>
+        
+        </div>
       <div className="flex flex-col gap-6">
         {/* Image principale agrandie */}
         <div className="w-full">
@@ -48,13 +54,8 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
             />
           ))}
         </div>
-
-        {/* Détails de la voiture */}
-        <div className="w-full mt-6">
-          <h1 className="text-3xl md:text-4xl font-bold">{car.name}</h1>
-          <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">{car.badge}</span>
-          <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.description}</p>
-        </div>
+        <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.description}</p>
+        
       </div>
     </div>
   );

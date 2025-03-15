@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   const { cars, loading, error } = useNissanCars();
 
   const baseSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -28,12 +28,12 @@ const Home: React.FC = () => {
     responsive: [
       { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
       { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 1440, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+      { breakpoint: 1440, settings: { slidesToShow: 4, slidesToScroll: 2 } },
     ],
   };
 
   const heroSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     autoplay: true,
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
 
     <main>
       {/* Hero Slider */}
-      <div className="mb-10">
+      <div className="mb-10 ">
         <Slider {...heroSettings}>
           {heroImages.map((image, index) => (
             <div key={index} className="w-full h-[500px]">
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
 
           return (
             <div key={badge} className="mb-10">
-              <h3 className="text-4xl font-semibold mb-4">Nos {badge}</h3>
+              <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
               <Slider {...dynamicSettings}>
                 {cars.map((car, index) => (
                   <div key={index} className="px-2 flex h-full">

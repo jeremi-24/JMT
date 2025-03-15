@@ -20,7 +20,7 @@ const CarrouselSection: React.FC = () => {
   const { cars, loading, error } = useNissanCars();
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3, // Afficher 3 cartes par slide sur les grands écrans
@@ -71,7 +71,7 @@ const CarrouselSection: React.FC = () => {
 
   return (
     <div
-      className="container mx-auto p-4 my-8"
+      className="container mx-auto  p-4 my-8"
       onWheel={handleWheel} // Ajout du gestionnaire d'événement
     >
       <div className="flex justify-between items-center mb-4">
@@ -79,7 +79,7 @@ const CarrouselSection: React.FC = () => {
        
         
       </div>
-      <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div> {/* Séparateur rouge */}
+      <div className="border-t-8 border-[#c3002f] -mx-4 w-1/6 mb-10 overflow-hidden "></div> {/* Séparateur rouge */}
 
       <Slider ref={sliderRef} {...settings}>
         {cars.map((car, index) => (
@@ -96,8 +96,8 @@ const CarrouselSection: React.FC = () => {
         ))}
       </Slider>
       
-<button  onClick={handleNavigate}  className=" w-[600px]  flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border justify-center hover:border-red-700  transition">
-          <span className="hidden md:inline">Voir la gamme</span>
+<button  onClick={handleNavigate}  className=" max-w-xs md:max-w-xl lg:max-w-2xl flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border justify-center hover:border-red-700  transition">
+          <span className="hidden md:inline">Découvrir la gamme complète</span>
           <ArrowUpRight size={20} />
         </button>
 

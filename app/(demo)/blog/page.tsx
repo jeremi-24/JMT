@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useBlog } from "@/app/context/BlogContext";
 import Link from "next/link";
-import { Eye } from "lucide-react";
+import { ArrowRight,LoaderCircle } from "lucide-react";
 
 export default function Page() {
   const { documents, loading, error } = useBlog();
@@ -18,7 +18,9 @@ export default function Page() {
         </h2>
         <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div>
 
-        {loading && <p className="text-gray-500">Chargement des documents...</p>}
+        {loading &&  <div className="flex justify-center items-center h-screen">
+                    <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+                  </div>}
         {error && <p className="text-red-500">{error}</p>}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -58,23 +60,24 @@ export default function Page() {
                   />
                 )}
               </div>
-              <div className="p-3">
-              {new Date(doc.date).toLocaleDateString()}
-                <h3 className="text-base font-semibold text-gray-900">
-                  {doc.titre}
-                </h3>
-               
-                
-              </div>
-              {/* Bouton Lire l'article */}
-              <div className="p-3">
-                <Link href={`/blog/${doc.id.toLowerCase()}`}>
-                  <button className="flex items-center text-[#c3002f]  hover:text-red-900">
-                                 <span className="">Lire plus</span>
-                                 <Eye className="ml-1" />
-                               </button>
-                </Link>
-              </div>
+              <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500">
+  <h5>{doc.date}</h5>
+
+  <h3 className="text-sm font-semibold  text-gray-900">
+    {doc.titre}
+  </h3>
+
+  {/* Bouton Lire l'article */}
+  <div>
+    <Link href={`/blog/${doc.id.toLowerCase()}`}>
+      <button className="flex items-center text-[#c3002f] hover:text-red-900">
+        <span>Lire plus</span>
+        <ArrowRight className="ml-1" />
+      </button>
+    </Link>
+  </div>
+</div>
+
             </motion.div>
           ))}
         </div>

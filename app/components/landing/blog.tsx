@@ -13,7 +13,7 @@ const NewsGallery: React.FC = () => {
       <div className='flex justify-between items-center mb-3'>
         <h2 className="text-4xl font-bold text-left">ACTUALITES</h2>
         <button className="w-[600px] justify-center flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
-          <span className="hidden md:inline">les actualités</span>
+          <span className="hidden md:inline">Découvrir nos dernières actualités</span>
           <ArrowUpRight size={20} />
         </button>
       </div>
@@ -61,12 +61,12 @@ const NewsGallery: React.FC = () => {
 
             <div className="p-4">
             <p className="text-gray-600 text-sm">  {doc.date} </p>
-              <h3 className="text-xl truncate font-bold">{doc.titre}</h3>
+              <h3 className="text-xl truncate mb-7 font-bold">{doc.titre}</h3>
             
             </div>
-            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-75 p-3 flex justify-between items-center">
+            <div className="absolute bottom-0 left-0 w-full p-4 flex justify-between items-center">
              
-            <Link href={`/blog/${doc.id.toLowerCase()}`}>   <button className="flex items-center text-[#c3002f] hover:text-red-900">
+            <Link href={`/blog/${doc.id.toLowerCase()}`}>   <button className="  flex items-center text-[#c3002f] hover:text-red-900">
                 <span className="">Lire plus</span>
                 <ArrowRight className="ml-1" />
               </button> </Link>

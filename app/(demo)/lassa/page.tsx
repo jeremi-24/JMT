@@ -51,7 +51,7 @@ export default function TireList() {
    
   
     const heroSettings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 800,
       autoplay: true,
