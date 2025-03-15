@@ -61,7 +61,7 @@ const NewsGallery: React.FC = () => {
 
             <div className="p-4">
             <p className="text-gray-600 text-sm">  {doc.date} </p>
-              <h3 className="text-xl font-bold">{doc.titre}</h3>
+              <h3 className="text-xl truncate font-bold">{doc.titre}</h3>
             
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-75 p-3 flex justify-between items-center">
