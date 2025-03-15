@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useBlog } from "@/app/context/BlogContext";
 import { LoaderCircle } from "lucide-react";
 
-const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
+const CarDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = use(params); // Déstructure la promesse
   const { documents } = useBlog();
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   // Recherche de la voiture par son nom
-  const car = documents.find((c) => c.id.toLowerCase() === resolvedParams.name);
+  const car = documents.find((c) => c.id.toLowerCase() === resolvedParams.id);
 
   if (!car) {
      return (
