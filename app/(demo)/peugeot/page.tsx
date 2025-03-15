@@ -87,6 +87,7 @@ const Home: React.FC = () => {
 
       <div className="container mx-auto p-4 my-8">
         <h2 className="text-4xl font-bold text-left">NOS VEHICULES PEUGEOT</h2>
+        <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         {/* Liste des véhicules */}
         <h2 className="text-4xl font-bold text-left mb-8"></h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

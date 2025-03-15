@@ -115,6 +115,7 @@ const Home: React.FC = () => {
             return (
               <div key={badge} className="mb-10">
                 <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
+                <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
                 <Slider {...dynamicSettings}>
                   {cars.map((car, index) => (
                     <div key={index} className="px-2 flex h-full">

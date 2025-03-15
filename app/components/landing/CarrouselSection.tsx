@@ -97,7 +97,7 @@ const CarrouselSection: React.FC = () => {
       </Slider>
       
 <button  onClick={handleNavigate}  className=" max-w-xs md:max-w-xl lg:max-w-2xl flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border justify-center hover:border-red-700  transition">
-          <span className="hidden md:inline">Découvrir la gamme complète</span>
+          <h6 className="hidden md:inline">Découvrir la gamme complète</h6>
           <ArrowUpRight size={20} />
         </button>
 
