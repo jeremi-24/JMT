@@ -10,7 +10,7 @@ interface Blog {
     titre: string;
     image: string[];
     texte: string;
-    date: Date;
+    date: string;
   }
   
 

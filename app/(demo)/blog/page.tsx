@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useBlog } from "@/app/context/BlogContext";
 import Link from "next/link";
+import { Eye } from "lucide-react";
 
 export default function Page() {
   const { documents, loading, error } = useBlog();
@@ -57,23 +58,21 @@ export default function Page() {
                   />
                 )}
               </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900">
+              <div className="p-3">
+              {new Date(doc.date).toLocaleDateString()}
+                <h3 className="text-base font-semibold text-gray-900">
                   {doc.titre}
                 </h3>
-                <p className="text-gray-500 text-sm">
-                  {new Date(doc.date).toLocaleDateString()}
-                </p>
-                <p className="text-gray-700 mt-2 line-clamp-3">
-                  {doc.texte}
-                </p>
+               
+                
               </div>
               {/* Bouton Lire l'article */}
-              <div className="p-5">
+              <div className="p-3">
                 <Link href={`/blog/${doc.id.toLowerCase()}`}>
-                  <span className="inline-block bg-[#c3002f] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a00028] transition">
-                    Lire l&apos;article
-                  </span>
+                  <button className="flex items-center text-[#c3002f]  hover:text-red-900">
+                                 <span className="">Lire plus</span>
+                                 <Eye className="ml-1" />
+                               </button>
                 </Link>
               </div>
             </motion.div>

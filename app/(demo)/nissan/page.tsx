@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const heroImages = [
   "/Slider Nissan - 06.jpg",
-  "/Slider Nissan - 01.jpg",
+  "https://editorial-bkend.davinci-cms.com/storage/files/folders/ma-morocco/vehicles/juke/new/led-highlights-with-high-beam-assist-gallery-D.jpg",
   "/Slider Nissan - 06.jpg",
   "/Slider Nissan - 00.jpg",
   "/Slider Nissan - 05.webp",
@@ -73,18 +73,17 @@ const Home: React.FC = () => {
           {heroImages.map((image, index) => (
             <div key={index} className="w-full h-[500px]">
               <Image
-                src={image}
-                alt={`Hero Image ${index + 1}`}
-                width={1200}
-                height={50}
-                layout="responsive"
-                className="object-cover"
+               src={image}
+    alt={`Hero Image ${index + 1}`}
+    layout="fill" // Remplit tout le conteneur
+    objectFit="cover" // Empêche le crop mal positionné
               />
             </div>
           ))}
         </Slider>
       </div>
     <div className="container mx-auto p-4 my-8">
+      
       
 
       {/* Section des voitures */}

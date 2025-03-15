@@ -12,7 +12,7 @@ const NewsGallery: React.FC = () => {
     <div className="container mx-auto py-8">
       <div className='flex justify-between items-center mb-3'>
         <h2 className="text-4xl font-bold text-left">ACTUALITES</h2>
-        <button className="flex items-center gap-2 w-[350px] mt-8 rounded-full px-6 py-3 bg-white text-[#c3002f] justify-center text-center hover:bg-[#c3002f] hover:text-white border border-[#c3002f] hover:border-red-700 transition">
+        <button className="w-[600px] justify-center flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
           <span className="hidden md:inline">les actualités</span>
           <ArrowUpRight size={20} />
         </button>
@@ -40,34 +40,34 @@ const NewsGallery: React.FC = () => {
             key={doc.id}
             className="relative bg-white rounded-lg shadow-lg overflow-hidden transition-all ease-in-out duration-300"
           >
-            {Array.isArray(doc.image) ? (
-                              doc.image.map((imageUrl, idx) => (
-                                <Image
-                                  key={idx}
-                                  src={imageUrl}
-                                  alt={doc.titre}
-                                  width={300}
-                                  height={200}
-                                  className="w-full h-48 object-cover"
-                                />
-                              ))
-                            ) : (
-                              <Image
-                                src={doc.image}
-                                alt={doc.titre}
-                                width={300}
-                                height={200}
-                                className="w-full h-48 object-cover"
-                              />
-                            )}
+            {Array.isArray(doc.image) && doc.image.length > 0 ? (
+  <Image
+    src={doc.image[0]} // On prend seulement la première image du tableau
+    alt={doc.titre}
+    width={300}
+    height={200}
+    className="w-full h-48 object-cover"
+  />
+) : (
+  <Image
+  src={Array.isArray(doc.image) ? doc.image[0] : doc.image} // Vérifie et prend la première image
+  alt={doc.titre}
+  width={300}
+  height={200}
+  className="w-full h-48 object-cover"
+/>
+
+)}
+
             <div className="p-4">
+            <p className="text-gray-600 text-sm">  {doc.date} </p>
               <h3 className="text-xl font-bold">{doc.titre}</h3>
-              <p className="text-black mb-10 truncate">{doc.texte}</p>
+            
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-75 p-3 flex justify-between items-center">
-              <p className="text-gray-600 text-sm"> {new Date(doc.date).toLocaleDateString()} </p>
+             
             <Link href={`/blog/${doc.id.toLowerCase()}`}>   <button className="flex items-center text-[#c3002f] hover:text-red-900">
-                <span className='font-[var(--font-peugeot)]'>Lire plus</span>
+                <span className="">Lire plus</span>
                 <ArrowRight className="ml-1" />
               </button> </Link>
             </div>

@@ -31,7 +31,8 @@ const Home: React.FC = () => {
         <Slider dots infinite speed={800} autoplay autoplaySpeed={3000} slidesToShow={1} slidesToScroll={1} fade arrows={false}>
           {heroImages.map((image, index) => (
             <div key={index} className="w-full h-[500px]">
-              <Image src={image} alt={`Hero Image ${index + 1}`} width={1200} height={50} layout="responsive" className="object-cover" />
+              <Image src={image} alt={`Hero Image ${index + 1}`}  layout="fill" // Remplit tout le conteneur
+    objectFit="cover"  />
             </div>
           ))}
         </Slider>

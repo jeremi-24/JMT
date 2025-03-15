@@ -1,8 +1,7 @@
 "use client";
 import { use, useState } from "react";
 import Image from "next/image";
-import { useCarContext } from "@/app/context/CarContext"; 
-
+import { useCarContext } from "@/app/context/CarContext";
 
 const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
   const resolvedParams = use(params); // Déstructure la promesse
@@ -12,8 +11,7 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 
   // Recherche de la voiture par son nom
   const allCars = [...peugeotCars, ...nissanCars];
-const car = allCars.find((c) => c.name.toLowerCase() === resolvedParams.name);
-
+  const car = allCars.find((c) => c.name.toLowerCase() === resolvedParams.name);
 
   if (!car) {
     return <div className="text-center mt-10">Voiture non trouvée 😢 </div>;
@@ -24,38 +22,38 @@ const car = allCars.find((c) => c.name.toLowerCase() === resolvedParams.name);
 
   return (
     <div className="container mx-auto pt-10 pb-10 px-4">
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Partie des images */}
-        <div className="w-full md:w-2/3">
-          {/* Image principale agrandie */}
+      <div className="flex flex-col gap-6">
+        {/* Image principale agrandie */}
+        <div className="w-full">
           <Image
             src={mainImage}
             alt={car.name}
             width={800}
-            height={500}
+            height={100}
             className="rounded-lg w-full h-auto object-contain"
           />
-          <div className="flex gap-2 mt-4 overflow-x-auto">
-            {/* Affichage des miniatures */}
-            {car.images.map((img, index) => (
-              <Image
-                key={index}
-                src={img}
-                alt={`Image ${index}`}
-                width={150}
-                height={90}
-               className="rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-cover"
-                onClick={() => setSelectedImage(img)} // Met à jour l'image principale
-              />
-            ))}
-          </div>
         </div>
 
-        {/* Partie des détails de la voiture */}
-        <div className="w-full md:w-1/3">
+        {/* Miniatures */}
+        <div className="flex gap-2 mt-4 overflow-x-auto">
+          {car.images.map((img, index) => (
+            <Image
+              key={index}
+              src={img}
+              alt={`Image ${index}`}
+              width={150}
+              height={90}
+              className="rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-cover"
+              onClick={() => setSelectedImage(img)} // Met à jour l'image principale
+            />
+          ))}
+        </div>
+
+        {/* Détails de la voiture */}
+        <div className="w-full mt-6">
           <h1 className="text-3xl md:text-4xl font-bold">{car.name}</h1>
           <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">{car.badge}</span>
-          <p className="mt-4 text-gray-700 text-sm md:text-base">{car.description}</p>
+          <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.description}</p>
         </div>
       </div>
     </div>
