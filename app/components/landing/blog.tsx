@@ -73,7 +73,7 @@ const NewsGallery: React.FC = () => {
 </div>
 <div className='mt-10' >
       <button className="max-w-xs md:max-w-xl lg:max-w-2xl justify-center flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
-          <span className="hidden md:inline">Découvrir nos dernières actualités</span>
+          <h5 className="hidden md:inline">Découvrir nos dernières actualités</h5>
           <ArrowUpRight size={20} />
         </button>
         </div>

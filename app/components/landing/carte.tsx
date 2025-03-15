@@ -21,7 +21,7 @@ const Carte = () => {
             <p className="text-gray-600  mb-4">Réservez un essai gratuit pour découvrir nos produits en action.</p>
             <button  
   onClick={handleContact}  
-  className="px-6 py-2 bg-[#c3002f] text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
+  className="px-6 py-2 bg-[#c3002f] text-sm text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
 >
   Réserver
 </button>
@@ -34,7 +34,7 @@ const Carte = () => {
             <p className="text-gray-600 mb-4">Planifiez un service personnalisé selon vos besoins.</p>
             <button  
   onClick={handleContact}  
-  className="px-6 py-2 bg-[#c3002f] text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
+  className="px-6 py-2 bg-[#c3002f] text-sm text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
 >
   Réserver
 </button>
@@ -47,7 +47,7 @@ const Carte = () => {
             <p className="text-gray-600 mb-4">Explorez les différentes offres adaptées à vos besoins.</p>
             <button  
   onClick={handleContact}  
-  className="px-6 py-2 bg-[#c3002f] text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
+  className="px-6 py-2 bg-[#c3002f] text-sm text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
 >
   Réserver
 </button>
@@ -60,7 +60,7 @@ const Carte = () => {
             <p className="text-gray-600 mb-4">Demandez un rappel à nos experts pour plus d&apos;informations.</p>
             <button  
   onClick={handleContact}  
-  className="px-6 py-2 bg-[#c3002f] text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
+  className="px-6 py-2 bg-[#c3002f] text-sm text-white rounded-full hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition"
 >
   Réserver
 </button>
