@@ -62,7 +62,7 @@ const NewsGallery: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full p-4 flex justify-between items-center">
           <Link href={`/blog/${doc.id.toLowerCase()}`}>
             <button className="flex items-center text-[#c3002f] hover:text-red-900">
-              <span>Lire plus</span>
+              <h6>Lire plus</h6>
               <ArrowRight className="ml-1" />
             </button>
           </Link>
