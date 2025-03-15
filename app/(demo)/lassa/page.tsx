@@ -8,7 +8,8 @@ import Image from "next/image";
 
 const heroImages = [ 
   "https://www.thetyrecentre.com/wp-content/uploads/2014/11/products-head.jpg",
-  "https://japanmotorstogo.com/wp-content/uploads/2022/03/LAS-Gana-Web-Site_1920x664px_Greenways-min-min.jpeg",
+  "https://www.thetyrecentre.com/wp-content/uploads/2014/11/products-head.jpg",
+  
   "https://admin.lassa.az/storage/uploads/images/about/img-1671566129.jpg",
   "https://tyre.com.sg/wp-content/uploads/2024/11/Lassa-Transway-Tires.jpg"
 ];

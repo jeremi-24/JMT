@@ -79,7 +79,7 @@ const CarrouselSection: React.FC = () => {
        
         
       </div>
-      <div className="border-t-8 border-[#c3002f] -mx-4 w-1/6 mb-10 overflow-hidden "></div> {/* Séparateur rouge */}
+      <div className="border-t-8 border-[#c3002f]  w-1/6 mb-10 overflow-hidden "></div> {/* Séparateur rouge */}
 
       <Slider ref={sliderRef} {...settings}>
         {cars.map((car, index) => (

@@ -39,7 +39,7 @@ export default function InfoSection() {
           </div>
           <div className="mt-4">
             <button className="flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
-              <span>Lire la suite</span>
+              <h6>Lire la suite</h6>
               <ArrowUpRight size={20} />
             </button>
           </div>

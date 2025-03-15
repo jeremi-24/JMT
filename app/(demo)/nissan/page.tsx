@@ -1,10 +1,12 @@
 "use client";
+
 import { useRef } from "react";
 import Slider from "react-slick";
 import { useNissanCars } from "@/app/context/NissanContext";
 import CarCard from "@/app/components/card";
 import Image from "next/image";
 import { LoaderCircle } from "lucide-react";
+
 const heroImages = [
   "/Slider Nissan - 06.jpg",
   "https://editorial-bkend.davinci-cms.com/storage/files/folders/ma-morocco/vehicles/juke/new/led-highlights-with-high-beam-assist-gallery-D.jpg",
@@ -69,59 +71,67 @@ const Home: React.FC = () => {
   }, {} as Record<string, typeof cars>);
 
   return (
-
     <main>
       {/* Hero Slider */}
-      <div className="mb-10 ">
-        <Slider {...heroSettings}>
+      <div className="mb-10 relative">
+        <Slider {...heroSettings} ref={sliderRef}>
           {heroImages.map((image, index) => (
             <div key={index} className="w-full h-[500px]">
               <Image
-               src={image}
-    alt={`Hero Image ${index + 1}`}
-    layout="fill" // Remplit tout le conteneur
-    objectFit="cover" // Empêche le crop mal positionné
+                src={image}
+                alt={`Hero Image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
               />
             </div>
           ))}
         </Slider>
+        {/* Navigation Buttons */}
+        <button
+          onClick={() => sliderRef.current?.slickPrev()}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full"
+        >
+          &#10094;
+        </button>
+        <button
+          onClick={() => sliderRef.current?.slickNext()}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full"
+        >
+          &#10095;
+        </button>
       </div>
-    <div className="container mx-auto p-4 my-8">
-      
-      
 
-      {/* Section des voitures */}
-    
-      <div onWheel={handleWheel}>
-        {Object.entries(groupedCars).map(([badge, cars]) => {
-          // Ajuster les paramètres du slider dynamiquement
-          const dynamicSettings = {
-            ...baseSettings,
-            slidesToShow: Math.min(baseSettings.slidesToShow, cars.length),
-            slidesToScroll: Math.min(baseSettings.slidesToScroll, cars.length),
-            infinite: cars.length > 1,
-          };
+      <div className="container mx-auto p-4 my-8">
+        {/* Section des voitures */}
+        <div onWheel={handleWheel}>
+          {Object.entries(groupedCars).map(([badge, cars]) => {
+            const dynamicSettings = {
+              ...baseSettings,
+              slidesToShow: Math.min(baseSettings.slidesToShow, cars.length),
+              slidesToScroll: Math.min(baseSettings.slidesToScroll, cars.length),
+              infinite: cars.length > 1,
+            };
 
-          return (
-            <div key={badge} className="mb-10">
-              <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
-              <Slider {...dynamicSettings}>
-                {cars.map((car, index) => (
-                  <div key={index} className="px-2 flex h-full">
-                    <CarCard
-                      images={car.images}
-                      name={car.name}
-                      description={car.description}
-                      badgeText={car.badge}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          );
-        })}
+            return (
+              <div key={badge} className="mb-10">
+                <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
+                <Slider {...dynamicSettings}>
+                  {cars.map((car, index) => (
+                    <div key={index} className="px-2 flex h-full">
+                      <CarCard
+                        images={car.images}
+                        name={car.name}
+                        description={car.description}
+                        badgeText={car.badge}
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </main>
   );
 };

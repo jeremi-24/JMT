@@ -18,7 +18,7 @@ const NewsGallery: React.FC = () => {
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {documents.slice(0, 3).map((doc, index) => (  // Limite à 3 documents
+        {documents.slice(0, 4).map((doc, index) => (  // Limite à 3 documents
           <Link href={`/blog/${doc.id.toLowerCase()}`} key={doc.id}>
             <motion.div
               className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
