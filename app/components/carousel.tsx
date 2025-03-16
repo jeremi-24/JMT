@@ -6,10 +6,11 @@ const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    { id: 1, image: "/slider-1.jpg", alt: "Slide 1" },
+    { id: 1, image: "https://japanmotorstogo.com/wp-content/uploads/2024/07/grenadier-1.jpg", alt: "Slide 1" },
     { id: 2, image: "/slider-2.jpg", alt: "Slide 2" },
     { id: 3, image: "https://assets.adac.de/image/upload/c_scale,f_auto,q_auto,t_2:1-default,w_1500/v1/ADAC-eV/KOR/Bilder/PR/peugeot3008-fahrbericht-vorne-schraeg-2306_mf6b6n_sam85e_eosnjv", alt: "Slide 3" },
-    { id: 4, image: "/slider-2.jpg", alt: "Slide 4" },
+    { id: 4, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-Landtrek.jpg", alt: "Slide 4" },
+    { id: 5, image: "/slider-2.jpg", alt: "Slide 4" },
   ];
 
   const goToNext = () => {
@@ -52,13 +53,13 @@ const Carousel: React.FC = () => {
       {/* Controls */}
       <button
         onClick={goToPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
       >
         &#10094;
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2  border border-gray-500  text-white p-2 rounded-full"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2  border border-white  text-white p-2 rounded-full"
       >
         &#10095;
       </button>

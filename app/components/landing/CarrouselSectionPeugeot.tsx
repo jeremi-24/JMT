@@ -75,7 +75,7 @@ const CarrouselSection: React.FC = () => {
         ))}
       </Slider>
       <button className=" max-w-xs md:max-w-xl lg:max-w-2xl flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border justify-center hover:border-red-700  transition">
-          <h6 className="hidden md:inline">Découvrir la gamme complète</h6>
+          <h6 className="hidden md:inline">Découvrir tous les modèles de la gamme  Peugeot</h6>
           <ArrowUpRight size={20} />
         </button>
     </div>

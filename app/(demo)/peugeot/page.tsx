@@ -73,13 +73,13 @@ const Home: React.FC = () => {
         {/* Boutons de navigation */}
         <button
           onClick={goToPrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
         >
           &#10094;
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
         >
           &#10095;
         </button>

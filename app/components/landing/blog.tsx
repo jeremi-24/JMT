@@ -12,7 +12,7 @@ const NewsGallery: React.FC = () => {
   return (
     <div className="container mx-auto py-8">
       <div className='flex justify-between items-center mb-3'>
-        <h2 className="text-4xl font-bold text-left">ACTUALITES</h2>
+        <h2 className="text-4xl font-bold text-left">NOTRE ACTUALITE</h2>
       </div>
       <div className="border-t-8 border-red-500 w-1/5 mb-5"></div>
       {loading &&  

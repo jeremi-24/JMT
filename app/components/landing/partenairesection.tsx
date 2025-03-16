@@ -14,7 +14,7 @@ const CarrouselPartenaire = () => {
 
   return (
     <section className="container mx-auto py-12 px-4 overflow-hidden">
-      <h2 className="text-4xl font-bold mb-5 text-left">NOS PARTENAIRES</h2>
+      <h2 className="text-4xl font-bold mb-5 text-left">ILS NOUS ONT FAIT CONFIANCE</h2>
       <div className="border-t-8 border-red-500 w-1/5 mb-10"></div>
 
       <div className="relative flex overflow-hidden w-full">
