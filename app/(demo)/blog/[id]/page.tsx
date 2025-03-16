@@ -25,12 +25,10 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div className="container mx-auto pt-10 pb-10 px-4">
-      {/* Détails de la voiture */}
-      <div className="w-full mt-6 mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold"> {car.titre}</h1>
-         
-        
-        </div>
+      {/* Titre */}
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">{car.titre}</h1>
+
+      {/* Images */}
       <div className="flex flex-col gap-6">
         {/* Image principale agrandie */}
         <div className="w-full">
@@ -57,9 +55,13 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
             />
           ))}
         </div>
-        <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.texte}</p>
-        
       </div>
+
+      {/* Date */}
+      <p className="mt-4 text-gray-500 text-center">{car.date}</p>
+
+      {/* Texte */}
+      <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.texte}</p>
     </div>
   );
 };
