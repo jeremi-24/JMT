@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function InfoSection() {
   return (
@@ -20,7 +21,9 @@ export default function InfoSection() {
           </div>
           <div className="mt-4">
             <button className="flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
-              <h6>Lire la suite</h6>
+            <Link href={`/blog/vpbmutyg328jux2uyoer`} >
+               <h6 className="underlined">Lire la suite</h6>
+               </Link>
               <ArrowUpRight size={20} />
             </button>
           </div>
@@ -39,7 +42,10 @@ export default function InfoSection() {
           </div>
           <div className="mt-4">
             <button className="flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700  transition">
-              <h6>Lire la suite</h6>
+               <Link href={`/blog/vpbmutyg328jux2uyoer`} >
+               <h6  className="underlined">Lire la suite</h6>
+               </Link>
+              
               <ArrowUpRight size={20} />
             </button>
           </div>

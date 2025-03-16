@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const heroImages = [ 
   "https://www.thetyrecentre.com/wp-content/uploads/2014/11/products-head.jpg",
-  "https://www.thetyrecentre.com/wp-content/uploads/2014/11/products-head.jpg",
+
   
   "https://admin.lassa.az/storage/uploads/images/about/img-1671566129.jpg",
   "https://tyre.com.sg/wp-content/uploads/2024/11/Lassa-Transway-Tires.jpg"

@@ -11,10 +11,11 @@ const NewsGallery: React.FC = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <div className='flex justify-between items-center mb-3'>
-        <h2 className="text-4xl font-bold text-left">NOTRE ACTUALITE</h2>
+      <div className='flex justify-between items-center mb-5'>
+        <h2 className="text-4xl font-bold  text-left">NOTRE ACTUALITE</h2>
+        
       </div>
-      <div className="border-t-8 border-red-500 w-1/5 mb-5"></div>
+      <div className="border-t-8 border-red-500 w-1/5 mb-8 "></div>
       {loading &&  
             <div className="flex justify-center items-center h-screen">
               <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
@@ -65,7 +66,7 @@ const NewsGallery: React.FC = () => {
 
                 <div className="absolute bottom-0 left-0 w-full p-4 flex justify-between items-center">
                   <button className="flex items-center text-[#c3002f] hover:text-red-900">
-                    <h6>Lire plus</h6>
+                    <h6 className='underline'>Lire plus</h6>
                     <ArrowRight className="ml-1" />
                   </button>
                 </div>
