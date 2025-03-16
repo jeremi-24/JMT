@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { useBlog } from "@/app/context/BlogContext";
+import { LoaderCircle } from "lucide-react";
 
 const NewsGallery: React.FC = () => {
   const { documents, loading, error } = useBlog();
@@ -14,10 +15,14 @@ const NewsGallery: React.FC = () => {
         <h2 className="text-4xl font-bold text-left">ACTUALITES</h2>
       </div>
       <div className="border-t-8 border-red-500 w-1/5 mb-5"></div>
-      {loading && <p className="text-gray-500">Chargement des documents...</p>}
+      {loading &&  
+            <div className="flex justify-center items-center h-screen">
+              <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+            </div>
+        }
       {error && <p className="text-red-500">{error}</p>}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {documents.slice(0, 4).map((doc, index) => (  // Limite à 3 documents
           <Link href={`/blog/${doc.id.toLowerCase()}`} key={doc.id}>
             <motion.div

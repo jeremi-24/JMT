@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { useLassaCars } from "@/app/context/LassaContext";
 import CarCard from "@/app/components/card";
 import Image from "next/image";
+import { LoaderCircle } from "lucide-react";
 
 const heroImages = [
   "https://japanmotorstogo.com/wp-content/uploads/2019/06/20190227131546_banner_26_1318470997-min.jpg",
@@ -53,7 +54,11 @@ const Home: React.FC = () => {
     }
   };
 
-  if (loading) return <div>Chargement...</div>;
+  if (loading)  return (
+    <div className="flex justify-center items-center h-screen">
+      <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+    </div>
+  );
   if (error) return <div>Erreur: {error}</div>;
 
   // Regrouper les voitures par badge
@@ -94,7 +99,8 @@ const Home: React.FC = () => {
 
             return (
               <div key={badge} className="mb-10">
-                <h3 className="text-4xl font-semibold mb-4">Nos PNEUS pour {badge}</h3>
+                <h3 className="text-4xl font-semibold uppercase mb-5">Nos PNEUS pour {badge}</h3>
+                <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
                 <Slider {...dynamicSettings}>
                   {cars.map((car, index) => (
                     <div key={index} className="px-2 flex h-full">

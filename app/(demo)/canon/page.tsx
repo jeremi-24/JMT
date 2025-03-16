@@ -1,88 +1,99 @@
 "use client";
-
+import { useRef } from "react";
+import Slider from "react-slick";
 import { useCanon } from "@/app/context/CanonContext";
+import CarCard from "@/app/components/card";
 import Image from "next/image";
-import { motion } from "framer-motion";
-export default function Page() {
+import { LoaderCircle } from "lucide-react";
+
+const heroImages = [ 
+  "https://imprimantezone.fr/images/test-de-limprimante-canon-pixma-pro-200-portabilite-et-qualite-des-couleurs.jpg",
+  "https://i1.adis.ws/i/canon/pixma-ts7440-ss-bk-ambient-02_1920x1080-7bb8a552-ffb4-11ea-a3c4-b083fea00fac?w=1920",
+  "https://pic.clubic.com/v1/images/2257181/raw",
+  "https://gfx3.senetic.com/akeneo-catalog/c/a/2/a/ca2a9199cc9f9e7847a8bbd77979914d4ebe9c3c_1684174_5805C009_image5.jpg",
+  "https://djd1xqjx2kdnv.cloudfront.net/photos/38/45/505997_31284_XXL.jpg",
+  "https://djd1xqjx2kdnv.cloudfront.net/photos/38/45/505997_31284_XXL.jpg",
+];
+
+const Home: React.FC = () => {
+  const sliderRef = useRef<Slider | null>(null);
   const { documents, loading, error } = useCanon();
 
-  return (
-    <div className="min-h-screen">
-      {/* Section Hero Banner sans effet Parallax */}
-      <div className="relative w-full h-[400px] overflow-hidden">
-        <Image
-          src="https://japanmotorstogo.com/wp-content/uploads/2022/03/Gamme-Canon-banner.jpg"
-          alt="Hero Banner"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/25">
-          <h1 className="text-white text-4xl font-bold">Bienvenue dans Canon</h1>
+  const heroSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+  };
+
+  const goToPrev = () => {
+    sliderRef.current?.slickPrev();
+  };
+
+  const goToNext = () => {
+    sliderRef.current?.slickNext();
+  };
+
+  if (loading)  return (
+        <div className="flex justify-center items-center h-screen">
+          <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
         </div>
+      );
+  if (error) return <div>Erreur: {error}</div>;
+
+  return (
+    <main>
+      {/* Hero Slider */}
+      <div className="mb-10 relative">
+        <button
+          onClick={goToPrev}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full z-10"
+        >
+          &#10094;
+        </button>
+        <Slider ref={sliderRef} {...heroSettings}>
+          {heroImages.map((image, index) => (
+            <div key={index} className="w-full h-[500px]">
+              <Image
+                src={image}
+                alt={`Hero Image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          ))}
+        </Slider>
+        <button
+          onClick={goToNext}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-gray-500 text-white p-2 rounded-full z-10"
+        >
+          &#10095;
+        </button>
       </div>
-
-      {/* Section Liste des Documents */}
-      <div className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl  font-semibold mb-6">Japan Motors Togo, representant officiel de Canon au Togo</h2>
+      
+      <div className="container mx-auto p-4 my-8">
+        {/* Section des voitures */} <h2 className="text-4xl  font-semibold mb-6">Japan Motors Togo, representant officiel de Canon au Togo</h2>
+        <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         <h4 className="text-2xl mb-6">Nos imprimantes Canon compactes et puissantes offrent des résultats exceptionnels depuis le confort de votre maison</h4>
-
-        {loading && <p className="text-gray-500">Chargement des documents...</p>}
-        {error && <p className="text-red-500">{error}</p>}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {documents.map((doc, index) => (
-            <motion.div
-              key={doc.id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: index * 0.1,
-                duration: 0.5,
-                ease: "easeOut",
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Image
-                src={doc.image}
-                alt={doc.name}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{doc.name}</h3>
-              </div>
-            </motion.div>
+            <CarCard
+              key={index}
+              images={[doc.image]}
+              name={doc.name}
+              description="" badgeText={""}              
+            />
           ))}
         </div>
       </div>
-
-      {/* Section Restons en Contact */}
-      {/* Section Restons en Contact */}
-<div className="bg-blue-500 text-white py-6  mt-10">
-  <div className="container mx-auto text-center">
-    <h3 className="text-2xl font-semibold mb-4">Restons en Contact</h3>
-   
-    <div className="flex justify-center gap-6 mb-4">
-      <p> <a href="https://wa.me/22891744987" className="underline">+228 91744987</a></p>
-      <p> <a href="https://wa.me/22870674044" className="underline">+228 70674044</a></p>
-      <p>Email: <a href="mailto:t.werem@japanmotorstogo.com" className="">t.werem@japanmotorstogo.com</a></p>
-    </div>
-    <a
-      href="#contact-form"
-      className="bg-[#c3002f] text-white px-6 py-2 rounded-full text-lg font-semibold"
-    >
-      Contacter
-    </a>
-  </div>
-</div>
-
-    </div>
+    </main>
   );
-}
+};
+
+export default Home;
