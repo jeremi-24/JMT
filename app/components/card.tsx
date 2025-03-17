@@ -30,7 +30,7 @@ const CarCard: React.FC<CarCardProps> = ({ images, name }) => {
   return (
     <Link href={`/car/${name.toLowerCase()}`}>
       <div
-        className="relative w-full max-w-sm rounded-2xl shadow-lg overflow-hidden group cursor-pointer transition-all transform "
+        className="relative w-full max-w-sm rounded-2xl  shadow-lg overflow-hidden group cursor-pointer transition-all transform "
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
