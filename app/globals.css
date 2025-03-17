@@ -45,3 +45,6 @@ body {
 }
 
 
+.custom-content img {
+  display: none !important;
+}

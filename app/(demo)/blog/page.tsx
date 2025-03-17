@@ -11,7 +11,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Section Liste des Documents */}
       <div className="container mx-auto px-4 py-10">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
           NOS ACTUALITÉS
@@ -27,9 +26,9 @@ export default function Page() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {documents.map((doc, index) => (
-            <Link href={`/blog/${doc.id.toLowerCase()}`} key={doc.id}>
+            <Link href={`/blog/${String(doc.id).toLowerCase()}`} key={doc.id}>
               <motion.div
-                className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -41,35 +40,31 @@ export default function Page() {
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="w-full h-48 overflow-hidden">
-                  {Array.isArray(doc.image) ? (
-                    doc.image.map((imageUrl, idx) => (
-                      <Image
-                        key={idx}
-                        src={imageUrl}
-                        alt={doc.titre}
-                        width={300}
-                        height={200}
-                        className="w-full h-48 object-cover"
-                      />
-                    ))
-                  ) : (
+                  {doc.image.length > 0 ? (
                     <Image
-                      src={doc.image}
+                      src={doc.image[0]}
                       alt={doc.titre}
                       width={300}
                       height={200}
                       className="w-full h-48 object-cover"
+                      priority
                     />
+                  ) : (
+                    <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+                      Aucune image
+                    </div>
                   )}
                 </div>
-                <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500">
+
+                <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500 flex-grow">
                   <h5>{doc.date}</h5>
 
-                  <h3 className="text-sm font-semibold text-gray-900">
-                    {doc.titre}
-                  </h3>
+                  
+                  <div
+  className=" text-sm font-semibold text-gray-900 line-clamp-2 overflow-hidden text-ellipsis"
+  dangerouslySetInnerHTML={{ __html: doc.titre }}
+/>
 
-                  {/* Bouton Lire l'article */}
                   <div>
                     <button className="flex items-center text-[#c3002f] hover:text-red-900">
                       <span>Lire plus</span>

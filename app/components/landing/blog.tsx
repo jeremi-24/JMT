@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import {  ArrowUpRight } from 'lucide-react';
 import { useBlog } from "@/app/context/BlogContext";
 import { LoaderCircle } from "lucide-react";
 
@@ -67,7 +67,7 @@ const NewsGallery: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-full p-4 flex justify-between items-center">
                   <button className="flex items-center text-[#c3002f] hover:text-red-900">
                     <h6 className='underline'>Lire plus</h6>
-                    <ArrowRight className="ml-1" />
+                    <ArrowUpRight className="ml-1" />
                   </button>
                 </div>
               </div>
@@ -79,7 +79,7 @@ const NewsGallery: React.FC = () => {
       <div className='mt-10'>
         <button className="max-w-xs md:max-w-xl lg:max-w-2xl justify-center flex items-center gap-2 rounded-full px-6 py-3 bg-[#c3002f] text-white hover:bg-white hover:text-red-700 hover:border hover:border-red-700 transition">
           <h5 className="hidden md:inline">Découvrir nos dernières actualités</h5>
-          <ArrowUpRight size={20} />
+          <h6 className="truncate md:hidden">Découvrir nos dernières actualités</h6>
         </button>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import { use, useState } from "react";
 import Image from "next/image";
 import { useBlog } from "@/app/context/BlogContext";
+import "../../../globals.css";
 import { LoaderCircle } from "lucide-react";
 
 const Page = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -26,8 +27,11 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="container mx-auto pt-10 pb-10 px-4">
       {/* Titre */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">{car.titre}</h1>
-
+      
+      <div
+  className=" text-3xl md:text-4xl font-bold text-center mb-6"
+  dangerouslySetInnerHTML={{ __html: car.titre }}
+/>
       {/* Images */}
       <div className="flex flex-col gap-6">
         {/* Image principale agrandie */}
@@ -58,10 +62,15 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
 
       {/* Date */}
-      <p className="mt-4 text-gray-500 text-center">{car.date}</p>
+      <p className="mt-4 text-gray-500 text-left">{car.date}</p>
+      <div
+  className="custom-content mt-4 text-gray-700 text-justify text-sm md:text-base"
+  dangerouslySetInnerHTML={{ __html: car.texte }}
+/>
 
       {/* Texte */}
-      <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.texte}</p>
+   
+
     </div>
   );
 };
