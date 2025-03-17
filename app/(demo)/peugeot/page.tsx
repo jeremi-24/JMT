@@ -59,12 +59,13 @@ const Home: React.FC = () => {
           arrows={false} // Désactive les flèches par défaut
         >
           {heroImages.map((image, index) => (
-            <div key={index} className="w-full h-[500px]">
+            <div key={index} className="w-full  h-[300px] md:h-[500px]">
               <Image
                 src={image}
                 alt={`Hero Image ${index + 1}`}
                 layout="fill" // Remplit tout le conteneur
                 objectFit="cover"
+                 objectPosition="center"
               />
             </div>
           ))}

@@ -84,12 +84,13 @@ const Home: React.FC = () => {
         </button>
         <Slider ref={sliderRef} {...heroSettings}>
           {heroImages.map((image, index) => (
-            <div key={index} className="w-full h-[500px]">
+            <div key={index} className="w-full  h-[300px] md:h-[500px]">
               <Image
                 src={image}
                 alt={`Hero Image ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
+                 objectPosition="center"
               />
             </div>
           ))}
