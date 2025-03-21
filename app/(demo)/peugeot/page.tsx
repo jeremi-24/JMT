@@ -71,19 +71,20 @@ const Home: React.FC = () => {
           ))}
         </Slider>
         
-        {/* Boutons de navigation */}
-        <button
-          onClick={goToPrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
-        >
-          &#10095;
-        </button>
+       {/* Boutons de navigation */}
+<button
+  onClick={goToPrev}
+  className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
+>
+  &#10094;
+</button>
+<button
+  onClick={goToNext}
+  className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
+>
+  &#10095;
+</button>
+
       </div>
 
       <div className="container mx-auto p-4 my-8">
@@ -91,7 +92,7 @@ const Home: React.FC = () => {
         <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         {/* Liste des véhicules */}
         <h2 className="text-4xl font-bold text-left mb-8"></h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {carData.map((car, index) => (
             <CarCard
               key={index}

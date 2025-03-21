@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   const { documents, loading, error } = useCanon();
 
   const heroSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     autoplay: true,
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
       <div className="mb-10 relative">
         <button
           onClick={goToPrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full z-10"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition z-10"
         >
           &#10094;
         </button>
@@ -71,14 +71,14 @@ const Home: React.FC = () => {
         </Slider>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full z-10"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition z-10"
         >
           &#10095;
         </button>
       </div>
       
       <div className="container mx-auto p-4 my-8">
-        {/* Section des voitures */} <h2 className="text-4xl  font-semibold mb-6">Japan Motors Togo, representant officiel de Canon au Togo</h2>
+        {/* Section des voitures */} <h2 className="text-4xl  font-semibold mb-6">Representant officiel <br /> de Canon au Togo</h2>
         <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         <h4 className="text-2xl mb-6">Nos imprimantes Canon compactes et puissantes offrent des résultats exceptionnels depuis le confort de votre maison</h4>
 

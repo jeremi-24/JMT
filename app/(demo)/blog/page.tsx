@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+        <h2 className="text-4xl font-semibold mb-4 text-gray-900">
           NOS ACTUALITÉS
         </h2>
         <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div>

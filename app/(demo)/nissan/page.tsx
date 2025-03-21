@@ -19,21 +19,6 @@ const Home: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
   const { cars, loading, error } = useNissanCars();
 
-  const baseSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 1440, settings: { slidesToShow: 4, slidesToScroll: 1 } },
-    ],
-  };
-
   const heroSettings = {
     dots: false,
     infinite: true,
@@ -46,21 +31,12 @@ const Home: React.FC = () => {
     arrows: false,
   };
 
-  const handleWheel = (event: React.WheelEvent) => {
-    if (sliderRef.current) {
-      if (event.deltaY > 0) {
-        sliderRef.current.slickNext();
-      } else {
-        sliderRef.current.slickPrev();
-      }
-    }
-  };
-
-  if (loading)  return (
-        <div className="flex justify-center items-center h-screen">
-          <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
-        </div>
-      );
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+      </div>
+    );
   if (error) return <div>Erreur: {error}</div>;
 
   // Regrouper les voitures par badge
@@ -90,13 +66,13 @@ const Home: React.FC = () => {
         {/* Navigation Buttons */}
         <button
           onClick={() => sliderRef.current?.slickPrev()}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
         >
           &#10094;
         </button>
         <button
           onClick={() => sliderRef.current?.slickNext()}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
         >
           &#10095;
         </button>
@@ -104,35 +80,25 @@ const Home: React.FC = () => {
 
       <div className="container mx-auto p-4 my-8">
         {/* Section des voitures */}
-        <div onWheel={handleWheel}>
-          {Object.entries(groupedCars).map(([badge, cars]) => {
-            const dynamicSettings = {
-              ...baseSettings,
-              slidesToShow: Math.min(baseSettings.slidesToShow, cars.length),
-              slidesToScroll: Math.min(baseSettings.slidesToScroll, cars.length),
-              infinite: cars.length > 1,
-            };
-
-            return (
-              <div key={badge} className="mb-10">
-                <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
-                <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
-                <Slider {...dynamicSettings}>
-                  {cars.map((car, index) => (
-                    <div key={index} className="px-2 flex h-full">
-                      <CarCard
-                        images={car.images}
-                        name={car.name}
-                        description={car.description}
-                        badgeText={car.badge}
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            );
-          })}
-        </div>
+        {Object.entries(groupedCars).map(([badge, cars]) => (
+          <div key={badge} className="mb-10">
+            <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
+            <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
+            
+            {/* Grille sur desktop, colonne sur mobile */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cars.map((car, index) => (
+                <CarCard
+                  key={index}
+                  images={car.images}
+                  name={car.name}
+                  description={car.description}
+                  badgeText={car.badge}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );

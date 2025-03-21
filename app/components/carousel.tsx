@@ -58,13 +58,13 @@ const Carousel: React.FC = () => {
       {/* Controls */}
       <button
         onClick={goToPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white p-2 rounded-full"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
       >
         &#10094;
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2  border border-white  text-white p-2 rounded-full"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 border border-white text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black transition"
       >
         &#10095;
       </button>
