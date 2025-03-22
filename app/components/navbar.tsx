@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             <li key={item}>
               <Link
                 href={item === "Accueil" ? "/" : `/${item.toLowerCase()}`}
-                className="block text-lg hover:text-[#c3002f] hover:font-bold transition-all"
+                className="block text-lg hover:text-[#c3002f] hover:underline transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 {item}

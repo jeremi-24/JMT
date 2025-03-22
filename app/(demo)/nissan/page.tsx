@@ -86,7 +86,7 @@ const Home: React.FC = () => {
             <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
             
             {/* Grille sur desktop, colonne sur mobile */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {cars.map((car, index) => (
                 <CarCard
                   key={index}
