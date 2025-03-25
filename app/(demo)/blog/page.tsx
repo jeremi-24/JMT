@@ -61,9 +61,10 @@ export default function Page() {
 
                   
                   <div
-  className=" text-sm font-semibold text-gray-900 line-clamp-2 overflow-hidden text-ellipsis"
+  className="text-sm font-semibold text-gray-900 line-clamp-4 overflow-hidden text-ellipsis"
   dangerouslySetInnerHTML={{ __html: doc.titre }}
 />
+
 
                   <div>
                     <button className="flex items-center text-[#c3002f] hover:text-red-900">

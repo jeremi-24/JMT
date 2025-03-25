@@ -48,3 +48,83 @@ body {
 .custom-content img {
   display: none !important;
 }
+
+
+/* Styles pour les articles */
+.post {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres */
+.post h1, 
+.post h2, 
+.post h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Liens */
+.post a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.post a:hover {
+  color: #005177;
+  text-decoration: underline;
+}
+
+/* Images dans les articles */
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Galerie d'images */
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.wp-block-gallery .wp-block-image {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+/* Conteneur principal de l'article */
+.wp-block-post-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Bloc citation */
+.wp-block-quote {
+  font-style: italic;
+  border-left: 4px solid #0073aa;
+  padding-left: 15px;
+  color: #666;
+}
+
+/* Boutons */
+.wp-block-button {
+  display: inline-block;
+  background-color: #0073aa;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.wp-block-button:hover {
+  background-color: #005177;
+}
