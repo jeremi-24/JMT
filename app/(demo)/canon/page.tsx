@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         <h4 className="text-2xl mb-6">Nos imprimantes Canon compactes et puissantes offrent des résultats exceptionnels depuis le confort de votre maison</h4>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {documents.map((doc, index) => (
             <CarCard
               key={index}

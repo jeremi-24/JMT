@@ -92,7 +92,7 @@ const Home: React.FC = () => {
         <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
         {/* Liste des véhicules */}
         <h2 className="text-4xl font-bold text-left mb-8"></h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {documents.map((car, index) => (
             <CarCard
               key={index}
