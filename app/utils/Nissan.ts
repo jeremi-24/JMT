@@ -9,6 +9,20 @@ interface Car {
   description: string;
   badge: string;
   images: string[];
+  spec?: {
+    moteur?: string;    // 👈 optionnel
+    vitesse?: string; 
+     puissance? :string;
+     consommation? :string;
+     securite? :string;
+     confort? :string;
+     connectivite? :string;
+     longueur? :string;
+     largeur? :string;
+     hauteur? :string;
+     transmission? :string;
+     systeme ? :string; // 👈 optionnel
+  };
 }
 
 // Fonction pour récupérer toutes les voitures Nissan
@@ -27,6 +41,7 @@ export const getNissanCars = async () => {
           description: doc.data().description,
           badge: doc.data().badge,
           images: doc.data().images,
+          spec: doc.data().spec || {},
         });
       });
     }

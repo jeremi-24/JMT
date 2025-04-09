@@ -75,7 +75,7 @@ const CarrouselSection: React.FC = () => {
       onWheel={handleWheel} // Ajout du gestionnaire d'événement
     >
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-4xl font-bold  text-left">NOS VEHICULES NISSAN</h2>
+        <h2 className="text-4xl font-bold  text-left">NOS  NISSAN</h2>
        
         
       </div>

@@ -3,12 +3,26 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { getNissanCars } from '../utils/Nissan';
 
-interface Car {
+
+ export interface Car {
   images: string[];
   name: string;
   description: string;
   badgeText?: string;
-  
+  spec?: {
+    moteur?: string;    // 👈 optionnel
+    vitesse?: string; 
+     puissance? :string;
+     consommation? :string;
+     securite? :string;
+     confort? :string;
+     connectivite? :string;
+     longueur? :string;
+     largeur? :string;
+     hauteur? :string;
+     transmission? :string;
+     systeme ? :string; // 👈 optionnel
+  };
   badge?: string; 
 }
 

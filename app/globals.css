@@ -85,6 +85,7 @@ body {
   height: auto;
   display: block;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 /* Galerie d'images */
@@ -93,18 +94,23 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .wp-block-gallery .wp-block-image {
   flex: 1 1 45%;
-  max-width: 45%;
+  max-width: 65%;
+  
 }
+
 
 /* Conteneur principal de l'article */
 .wp-block-post-content {
   font-size: 16px;
   line-height: 1.6;
   color: #444;
+  text-align: justify;
 }
 
 /* Bloc citation */
@@ -113,6 +119,7 @@ body {
   border-left: 4px solid #0073aa;
   padding-left: 15px;
   color: #666;
+  text-align: justify;
 }
 
 /* Boutons */
@@ -128,3 +135,103 @@ body {
 .wp-block-button:hover {
   background-color: #005177;
 }
+
+/* Conteneur principal de l'article */
+.detailpost {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Espacement vertical entre les éléments */
+.detailpost p,
+.detailpost ul,
+.detailpost ol,
+.detailpost blockquote,
+.detailpost h1,
+.detailpost h2,
+.detailpost h3,
+.detailpost h4,
+.detailpost h5,
+.detailpost h6,
+.detailpost img,
+.detailpost figure {
+  margin-bottom: 1.5rem;
+  text-align: justify !important;
+}
+
+/* Titres */
+.detailpost h1, 
+.detailpost h2, 
+.detailpost h3 {
+
+  font-weight: bold;
+  color: #333;
+}
+
+/* Liens */
+.detailpost a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.detailpost a:hover {
+  color: #005177;
+  text-decoration: underline;
+}
+
+/* Images dans les articles */
+.detailpost img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Galerie d'images */
+.detailpost .wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.detailpost .wp-block-gallery .wp-block-image {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+/* Bloc citation */
+.detailpost blockquote {
+  font-style: italic;
+  border-left: 4px solid #0073aa;
+  padding-left: 15px;
+  color: #666;
+}
+
+/* Espacement entre les paragraphes dans les blockquotes */
+.detailpost blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+/* Boutons */
+.detailpost .wp-block-button {
+  display: inline-block;
+  background-color: #0073aa;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.detailpost .wp-block-button:hover {
+  background-color: #005177;
+}
+
+/* Liste bien espacée */
+.detailpost ul,
+.detailpost ol {
+  padding-left: 1.5rem;
+}
+

@@ -11,9 +11,11 @@ const Carte = () => {
   
   return (
     <section className="py-12  bg-gray-900 w-full mx-auto ">
-      <div className="max-w-screen-xl  px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl  px-4 sm:px-6 ">
       <h2 className="text-4xl  font-bold text-white mb-6 text-center">CONTINUEZ L&apos;EXPERIENCE</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+
+
           <div className="bg-white p-6  rounded-lg shadow-lg text-center flex flex-col items-center">
             <Calendar className="h-12 w-12 text-[#c3002f] mb-4" />
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Réserver <br /> un essai </h3> 

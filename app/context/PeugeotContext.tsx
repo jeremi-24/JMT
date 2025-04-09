@@ -6,12 +6,28 @@ interface Car {
   name: string;
   description: string;
   badgeText: string;
+  spec?: {
+    moteur?: string;    // 👈 optionnel
+    vitesse?: string; 
+     puissance? :string;
+     consommation? :string;
+     securite? :string;
+     confort? :string;
+     connectivite? :string;
+     longueur? :string;
+     largeur? :string;
+     hauteur? :string;
+     transmission? :string;
+     systeme ? :string; // 👈 optionnel
+  };
+ 
 }
 
 interface PeugeotContextType {
   carData: Car[];
   loading: boolean;
   error: string | null;
+ 
 }
 
 const PeugeotContext = createContext<PeugeotContextType | undefined>(undefined);
@@ -45,6 +61,11 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
           name: "3008",
           description: "Un SUV élégant avec une technologie de pointe.",
           badgeText: "SUV",
+          spec: {
+            moteur: "Essence/Diesel/Hybride",
+           connectivite:"Apple CarPlay et Android Auto",
+            systeme: "i-Cockpit , affichage 3D",
+          },
         },
         {
           images: [
@@ -56,6 +77,13 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
           name: "5008",
           description: "Un SUV familial spacieux pour vos rêves.",
           badgeText: "SUV",
+          spec: {
+            moteur: "Essence/Diesel/Hybride",
+            confort:": Sièges  chauffants et ventilés",
+            connectivite:": GPS",
+            systeme: "Ecran tactile 8",
+          },
+          
         },
         {
           images: [
@@ -67,6 +95,13 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
           name: "408",
           description: "Une berline audacieuse et raffinée.",
           badgeText: "Berline",
+          spec: {
+            moteur: "Essence 1.6L",
+            vitesse: "220 km/h",
+            puissance:"218 ch",
+            consommation: "7,56 L/100 km ",
+            systeme: "Ecran tactile 10",
+          },
         },
         {
           images: [
@@ -100,6 +135,12 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
           name: "Traveller",
           description: "Un van confortable pour vos voyages en famille ou pro.",
           badgeText: "Van",
+          spec: {
+            moteur: "Essence/Diesel",
+           connectivite:"Apple CarPlay et Android Auto",
+            systeme: "Ecran tactile 8 pouces ",
+            securite:"capteurs de stationnement ",
+          },
         },
       ]);
     } catch (err) {
