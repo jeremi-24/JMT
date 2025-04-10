@@ -87,10 +87,10 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
         },
         {
           images: [
-            "https://www.peugeot.fr/content/dam/peugeot/master/b2c/models/408/408-gt-line-blue.jpg",
-            "https://media.peugeot.com/file/86/1/peugeot-408-blue-2.861861.jpg",
-            "https://th.bing.com/th/id/OIP.X4zUOARytVGqorZv0yEx8wHaE8?w=1600&h=1067&rs=1&pid=ImgDetMain",
-            "https://media.peugeot.com/file/89/2/peugeot-408-side-view.892892.jpg",
+            "https://im.qccdn.fr/node/actualite-peugeot-408-premieres-impressions-104355/thumbnail_800x480px-138510.jpg",
+            "https://www.topgear-magazine.fr/wp-content/uploads/2023/01/Essai-Peugeot-408-07.jpg",
+            "https://journalauto.com/wp-content/uploads/2022/11/2-408-AR.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0WSHy4MtEhJ64sR4asPNxlLVLuWFkEPavRaJY9S7qJWGzob9Xg8YVHJ12EYdVzhQXUY&usqp=CAU",
           ],
           name: "408",
           description: "Une berline audacieuse et raffinée.",
