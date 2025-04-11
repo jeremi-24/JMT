@@ -105,7 +105,7 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
   <div className="flex flex-col gap-4">
     {/* Image dynamique */}
     <Image
-      src={car.design?.image || "/default.jpg"} // image dynamique ou fallback
+      src={car.design1?.image || "/default.jpg"} // image dynamique ou fallback
       alt={car.name}
       width={600}
       height={400}
@@ -114,18 +114,162 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 
     {/* Titre dynamique */}
     <h2 className="text-2xl font-bold text-gray-800">
-      {car.design?.titre || "Titre du modèle"}
+      {car.design1?.titre || "Titre du modèle"}
     </h2>
 
     {/* Description dynamique */}
     <p className="text-gray-600 text-sm md:text-base ">
-      {car.design?.description || "Description du modèle non disponible."}
+      {car.design1?.description || "Description du modèle non disponible."}
     </p>
   </div>
 
   {/* Colonne droite (contenu libre ou autres données si tu veux) */}
-  <div className="bg-gray-50 p-6 rounded-xl shadow-md">
-   
+  <div className="  rounded-xl ">
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design2?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design2?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design2?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  </div>
+</div>
+
+{/* Section trois Colonnes deuxieme ligne  */}
+<div className="mt-10 grid grid-cols-3 md:grid-cols-3 gap-8 items-start">
+  {/* Colonne gauche (image, titre, description) */}
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design5?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design5?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design5?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  {/* Colonne droite (contenu libre ou autres données si tu veux) */}
+  <div className="  rounded-xl ">
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design6?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design6?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design6?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  </div>
+     {/* 3em colonne */}
+  <div className="  rounded-xl ">
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design7?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design7?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design7?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  </div>
+</div>
+
+{/* Section Deux Colonnes deuxieme ligne */}
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+  {/* Colonne gauche (image, titre, description) */}
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design3?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design3?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design3?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  {/* Colonne droite (contenu libre ou autres données si tu veux) */}
+  <div className="  rounded-xl ">
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design4?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design4?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design4?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
   </div>
 </div>
 

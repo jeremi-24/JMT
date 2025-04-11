@@ -9,7 +9,37 @@ interface Car {
   description: string;
   badge: string;
   images: string[];
-  design:{
+  design1?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design2?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design3?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design4?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design5?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design6?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design7?:{
     titre:string;
     description:string;
     image:string;
@@ -47,7 +77,13 @@ export const getNissanCars = async () => {
           badge: doc.data().badge,
           images: doc.data().images,
           spec: doc.data().spec || {},
-          design:doc.data().design || {},
+          design1:doc.data().design1 || {},
+          design2:doc.data().design2 || {},
+          design3:doc.data().design3 || {},
+          design4:doc.data().design4 || {},
+          design5:doc.data().design5 || {},
+          design6:doc.data().design6 || {},
+          design7:doc.data().design7 || {},
         });
       });
     }

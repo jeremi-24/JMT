@@ -10,7 +10,7 @@ interface Foton {
   description: string;
   badge: string;
   images: string[];
-  design?:{
+  design1?:{
     titre:string;
     description:string;
     image:string;

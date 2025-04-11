@@ -6,7 +6,37 @@ interface Car {
   name: string;
   description: string;
   badgeText: string;
-  design?:{
+  design1?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design2?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design3?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design4?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design5?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design6?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design7?:{
     titre:string;
     description:string;
     image:string;
