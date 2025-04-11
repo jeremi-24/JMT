@@ -8,6 +8,15 @@ import { LoaderCircle } from "lucide-react";
 
 const NewsGallery: React.FC = () => {
   const { documents, loading, error } = useBlog();
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+  
 
   return (
     <div className="container mx-auto py-8">
@@ -60,7 +69,7 @@ const NewsGallery: React.FC = () => {
                 )}
 
                 <div className="p-4">
-                  <p className="text-gray-600 text-sm">{doc.date}</p>
+                  <p className="text-gray-600 text-sm">{formatDate(doc.date)}</p>
                   <h3
   className="text-xl mb-7 font-bold"
   style={{
@@ -76,7 +85,7 @@ const NewsGallery: React.FC = () => {
 
                 <div className="absolute bottom-0 left-0 w-full p-4 flex justify-between items-center">
                   <button className="flex items-center text-[#c3002f] hover:text-red-900">
-                    <h6 className='underline'>Lire plus</h6>
+                    <h6 className='underline police'>Lire plus</h6>
                     <ArrowUpRight className="ml-1" />
                   </button>
                 </div>

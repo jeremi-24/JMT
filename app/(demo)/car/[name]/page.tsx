@@ -41,14 +41,14 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
         </div>
 
         {/* Miniatures */}
-        <div className="flex gap-2 mt-4 overflow-x-auto">
+        <div className="flex gap-2 mt-4 overflow-x-auto justify-between">
           {car.images.map((img, index) => (
             <Image
               key={index}
               src={img}
               alt={'Image ${index}'}
-              width={150}
-              height={90}
+              width={250}
+              height={70}
               className="rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-cover"
               onClick={() => setSelectedImage(img)}
             />
@@ -99,6 +99,37 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
   )}
 </div>
 
+{/* Section Deux Colonnes */}
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+  {/* Colonne gauche (image, titre, description) */}
+  <div className="flex flex-col gap-4">
+    {/* Image dynamique */}
+    <Image
+      src={car.design?.image || "/default.jpg"} // image dynamique ou fallback
+      alt={car.name}
+      width={600}
+      height={400}
+      className="rounded-xl object-cover"
+    />
+
+    {/* Titre dynamique */}
+    <h2 className="text-2xl font-bold text-gray-800">
+      {car.design?.titre || "Titre du modèle"}
+    </h2>
+
+    {/* Description dynamique */}
+    <p className="text-gray-600 text-sm md:text-base ">
+      {car.design?.description || "Description du modèle non disponible."}
+    </p>
+  </div>
+
+  {/* Colonne droite (contenu libre ou autres données si tu veux) */}
+  <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+   
+  </div>
+</div>
+
+  
       </div>
     </div>
   );

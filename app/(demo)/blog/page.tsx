@@ -8,6 +8,15 @@ import { ArrowRight, LoaderCircle } from "lucide-react";
 
 export default function Page() {
   const { documents, loading, error } = useBlog();
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+  
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -57,7 +66,7 @@ export default function Page() {
                 </div>
 
                 <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500 flex-grow">
-                  <h5>{doc.date}</h5>
+                  <h5>{formatDate(doc.date)}</h5>
 
                   
                   <div
@@ -67,8 +76,8 @@ export default function Page() {
 
 
                   <div>
-                    <button className="flex items-center text-[#c3002f] hover:text-red-900">
-                      <span>Lire plus</span>
+                    <button className="flex items-center police text-[#c3002f] hover:text-red-900">
+                      <span className="police">Lire plus</span>
                       <ArrowRight className="ml-1" />
                     </button>
                   </div>

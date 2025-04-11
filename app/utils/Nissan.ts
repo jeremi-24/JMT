@@ -9,6 +9,11 @@ interface Car {
   description: string;
   badge: string;
   images: string[];
+  design:{
+    titre:string;
+    description:string;
+    image:string;
+  };
   spec?: {
     moteur?: string;    // 👈 optionnel
     vitesse?: string; 
@@ -42,6 +47,7 @@ export const getNissanCars = async () => {
           badge: doc.data().badge,
           images: doc.data().images,
           spec: doc.data().spec || {},
+          design:doc.data().design || {},
         });
       });
     }

@@ -14,6 +14,11 @@ interface Car {
   description: string;
   badge: string;
   images: string[];
+  design?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
   spec?: {
     moteur?: string;    // 👈 optionnel
     vitesse?: string; 

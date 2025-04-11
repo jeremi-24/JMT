@@ -9,6 +9,11 @@ import { getNissanCars } from '../utils/Nissan';
   name: string;
   description: string;
   badgeText?: string;
+  design?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
   spec?: {
     moteur?: string;    // 👈 optionnel
     vitesse?: string; 

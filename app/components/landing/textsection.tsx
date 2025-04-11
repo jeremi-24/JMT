@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export default function InfoSection() {
   return (
-    <section className="max-w-6xl mx-auto p-6 relative">
+    <section className="max-w-6xl mx-auto px-1 sm:px-6 py-6 relative">
+
       {/* Contenu des blocs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Bloc 1 */}
@@ -11,7 +12,7 @@ export default function InfoSection() {
           <div>
             <h2 className="text-2xl md:text-4xl font-bold text-left  sm:text-left">100 ANNÉES <br /> D’EXPÉRIENCES</h2>
             <div className="border-t-8 border-[#c3002f] w-1/5 my-6 text-left"></div>
-            <p className="text-gray-600 text-lg  text-justify sm:text-left">
+            <p className="text-gray-600 text-lg   sm:text-left">
               En 1965, la société a été créée sous le nom de Japan Motors Trading Company Limited, 
               une société privée à responsabilité limitée par actions. Elle est née d&apos;une entreprise familiale 
               de pièces de rechange et de transport automobile, Kalmoni & Sons, créée en 1920 par le regretté 
