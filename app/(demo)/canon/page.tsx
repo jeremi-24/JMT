@@ -88,7 +88,8 @@ const Home: React.FC = () => {
               key={index}
               images={[doc.image]}
               name={doc.name}
-              description="" badgeText={""}              
+              description="" badgeText={""}      
+              disableNavigation={true}        
             />
           ))}
         </div>

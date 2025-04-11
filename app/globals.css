@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   * {
     font-family: var(--font-peugeot), sans-serif;
@@ -17,6 +19,7 @@
   --foreground: #171717;
   font-family: 'Peugeot', sans-serif;
 }
+
 span {
   font-weight: bold;
   font-family: 'Peugeot', sans-serif !important;
@@ -217,6 +220,8 @@ body {
   padding-left: 15px;
   color: #666;
   line-height: 2;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Espacement entre les paragraphes dans les blockquotes */
@@ -246,4 +251,66 @@ body {
 
 .police{
   font-family: var(--font-peugeot), sans-serif !important;
+}
+
+/* ---------- RESPONSIVITÉ ---------- */
+
+/* Petits écrans (smartphones) */
+@media (max-width: 767px) {
+  .post, .detailpost {
+    padding: 15px;
+  }
+
+  .post h1, .detailpost h1 {
+    font-size: 1.5rem;
+  }
+
+  .post h2, .detailpost h2 {
+    font-size: 1.25rem;
+  }
+
+  .post h3, .detailpost h3 {
+    font-size: 1.125rem;
+  }
+
+  .wp-block-gallery,
+  .detailpost .wp-block-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .wp-block-button,
+  .detailpost .wp-block-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .detailpost ul,
+  .detailpost ol {
+    padding-left: 1rem;
+  }
+}
+
+/* Moyens écrans (tablettes) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+}
+
+/* Grands écrans (desktop) */
+@media (min-width: 1025px) {
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
 }

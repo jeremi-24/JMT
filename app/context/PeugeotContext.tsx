@@ -115,7 +115,7 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
             "https://im.qccdn.fr/node/actualite-peugeot-408-premieres-impressions-104355/thumbnail_800x480px-138510.jpg",
             "https://www.topgear-magazine.fr/wp-content/uploads/2023/01/Essai-Peugeot-408-07.jpg",
             "https://journalauto.com/wp-content/uploads/2022/11/2-408-AR.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0WSHy4MtEhJ64sR4asPNxlLVLuWFkEPavRaJY9S7qJWGzob9Xg8YVHJ12EYdVzhQXUY&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0WSHy4MtEhJ64sR4asPNxlLVLuWFkEPavRaJY9S7qJWGzob9Xg8YVHJ12EYdVzhQXUY&usqp=CAU"
           ],
           name: "408",
           description: "Une berline audacieuse et raffinée.",
@@ -123,11 +123,48 @@ export const PeugeotProvider = ({ children }: { children: ReactNode }) => {
           spec: {
             moteur: "Essence 1.6L",
             vitesse: "220 km/h",
-            puissance:"218 ch",
-            consommation: "7,56 L/100 km ",
-            systeme: "Ecran tactile 10",
+            puissance: "218 ch",
+            consommation: "7,56 L/100 km",
+            systeme: "Écran tactile 10\" HD"
           },
+          design1: {
+            image: "https://cdn.peugeot.com/sites/default/files/2022-06/Peugeot_408_Design.jpg",
+            titre: "UN DESIGN INATTENDU",
+            description: "Fastback dynamique et innovant, la berline PEUGEOT 408 affiche une élégance moderne, une posture affirmée, aux lignes félines et acérées."
+          },
+          design2: {
+            image: "https://cdn.motor1.com/images/mgl/OqNxpK/s1/2023-peugeot-408-interior.jpg",
+            titre: "PEUGEOT I-COCKPIT®",
+            description: "Volant compact, combiné digital 3D et écran tactile 10’’ HD pour une ergonomie incomparable et une technologie simple et à portée de main. Disponible en option sur la version GT."
+          },
+          design3: {
+            image: "https://images.caradisiac.com/images/8/2/3/8/198238/S1-essai-video-peugeot-408-la-berline-haute-sur-pattes-qui-se-prend-pour-un-coupe-suv-736763.jpg",
+            titre: "LA SÉCURITÉ AU VOLANT",
+            description: "Davantage de sérénité sur la route grâce à un dispositif complet d'aides à la conduite : régulateur de vitesse adaptatif, freinage d’urgence, alerte de franchissement involontaire de ligne, surveillance des angles morts, etc."
+          },
+          design4: {
+            image: "https://images.caradisiac.com/logos/6/8/4/2/196842/S1-essai-video-peugeot-408-la-berline-haute-sur-pattes-qui-se-prend-pour-un-coupe-suv-736765.jpg",
+            titre: "DES PERFORMANCES MAÎTRISÉES",
+            description: "Motorisations essence ou hybride rechargeable, pour une conduite fluide, réactive et équilibrée. La PEUGEOT 408 allie plaisir de conduite et maîtrise de la consommation."
+          },
+          design5: {
+            image: "https://media.peugeot.fr/image/76/1/peugeot-408-2206styp-033.879761.43.jpg",
+            titre: "UNE CONNECTIVITÉ AVANCÉE",
+            description: "Services connectés de dernière génération : navigation en temps réel, mises à jour OTA, commande vocale intuitive, et même l’assistant vocal ChatGPT à bord pour enrichir vos trajets.*"
+          },
+          design6: {
+            image: "https://images.caradisiac.com/images/8/2/3/8/198238/S1-essai-video-peugeot-408-la-berline-haute-sur-pattes-qui-se-prend-pour-un-coupe-suv-736764.jpg",
+            titre: "CONFORT ET HABITABILITÉ",
+            description: "Avec un empattement généreux, des sièges enveloppants et un espace aux jambes spacieux à l’arrière, la 408 offre un confort optimal pour tous les passagers, même sur les longs trajets."
+          },
+          design7: {
+            image: "https://www.largus.fr/images/images/peugeot_408_gt_bleu-004.jpg",
+            titre: "RAFFINEMENT INTÉRIEUR",
+            description: "Des matériaux de qualité, des finitions soignées, une ambiance lumineuse personnalisable : à bord de la PEUGEOT 408, chaque détail est pensé pour sublimer vos trajets."
+          },
+         
         },
+        
         
         {
           images: [

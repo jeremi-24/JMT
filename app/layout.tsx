@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+
 import "./globals.css";
 import Navbar from "./components/navbar";
 import "slick-carousel/slick/slick.css";
@@ -43,6 +44,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={peugeotFont.variable}>
+      <head>
+        {/* ✅ Styles Gutenberg (via CDN) */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@wordpress/block-library@latest/build/style.css"
+        />
+      </head>
       <body className="font-[var(--font-peugeot)] antialiased">
         <NissanCarsProvider>
           <CanonProvider>

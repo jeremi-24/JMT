@@ -100,6 +100,7 @@ const Home: React.FC = () => {
               name={car.name}
               description={car.description}
               badgeText={car.badge}
+              disableNavigation={true}
             />
           ))}
         </div>

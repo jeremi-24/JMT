@@ -19,9 +19,9 @@ export default function Page() {
   
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen dark:bg-transparent bg-gray-100">
       <div className="container mx-auto px-4 py-10">
-        <h2 className="text-4xl font-semibold mb-4 text-gray-900">
+        <h2 className="text-4xl dark:text-white font-semibold mb-4 text-gray-900">
           NOS ACTUALITÉS
         </h2>
         <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div>
@@ -37,7 +37,7 @@ export default function Page() {
           {documents.map((doc, index) => (
             <Link href={`/blog/${String(doc.id).toLowerCase()}`} key={doc.id}>
               <motion.div
-                className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
+                className="bg-white  shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{

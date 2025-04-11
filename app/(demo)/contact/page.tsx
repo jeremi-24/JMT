@@ -9,21 +9,21 @@ export default function ContactPage() {
         <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
           <Mail className="w-10 h-10 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">Formulaire de contact</h3>
-          <p className="text-gray-700">contact@japanmotorstogo.com</p>
+          <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
         </div>
 
         {/* Carte Téléphone */}
         <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
           <Phone className="w-10 h-10 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">Contactez-nous par telephone</h3>
-          <p className="text-gray-700">+228 22 27 85 54 / 22 27 85 55</p>
+          <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p>
         </div>
 
         {/* Carte Adresse */}
         <div className="flex-1 p-6 text-center flex flex-col items-center">
           <MapPin className="w-10 h-10 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">L&apos;agence Japan Motors Togo</h3>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-white">
             815, Bd. de l’Oti, à côté de l’Eglise Evangélique Presbytérienne Bè Kpota – 01 BP 4715 Lomé 1 Lomé – Togo
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function ContactPage() {
 
         {/* Formulaire de contact */}
         <div className="bg-white shadow-lg rounded-lg p-8 h-[500px] flex flex-col justify-center">
-          <h2 className="text-2xl font-bold mb-4">Contactez-nous</h2>
+          <h2 className="text-2xl font-bold mb-4 dark:text-black">Contactez-nous</h2>
           <div className="border-t-4 border-[#c3002f] w-1/6 mb-6"></div>
           <form className="space-y-4">
             <input type="text" placeholder="Nom" className="w-full p-3 border rounded-lg" required />

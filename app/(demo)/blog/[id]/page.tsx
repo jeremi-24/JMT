@@ -32,7 +32,7 @@ const ArticlePage: React.FC = () => {
 
   return (
     <div>
-    <div className="max-w-5xl mx-auto w-full px-4 py-10 t">
+    <div className="max-w-5xl mx-auto w-full px-2 py-10 t">
       <h1 className="text-4xl  text-left uppercase font-bold">{article.titre}</h1>
       {article.image && article.image.length > 0 && (
         <div className="relative w-full h-96 my-4 rounded-lg overflow-hidden">
@@ -57,12 +57,12 @@ const ArticlePage: React.FC = () => {
     </div>
     <div className="bg-slate-50 p-8">
       <div className="max-w-5xl mx-auto w-full px-4 py-4 t">
-    <h3 className="text-2xl font-semibold uppercase mb-4">A LIRE AUSSI</h3>
+    <h3 className="text-2xl font-semibold dark:text-black uppercase mb-4">A LIRE AUSSI</h3>
     <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {documents.filter(doc => doc.id !== id).slice(0, 4).map((doc, index) => (
                <Link href={`/blog/${String(doc.id).toLowerCase()}`} key={doc.id}>
                  <motion.div
-                   className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
+                   className="bg-white dark:bg-black shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
                    initial={{ opacity: 0, y: 50 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{
@@ -90,12 +90,12 @@ const ArticlePage: React.FC = () => {
                      )}
                    </div>
    
-                   <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500 flex-grow">
+                   <div className="flex flex-col justify-between gap-2 p-3 dark:text-white text-sm text-gray-500 flex-grow">
                      <h5>{formatDate(doc.date)}</h5>
    
                      
                      <div
-     className="text-sm font-semibold text-gray-900 line-clamp-4 overflow-hidden text-ellipsis"
+     className="text-sm  font-semibold text-gray-900 md:text-base dark:text-white line-clamp-4 overflow-hidden text-ellipsis"
      dangerouslySetInnerHTML={{ __html: doc.titre }}
    />
    

@@ -1,16 +1,19 @@
 "use client";
-import { use, useState } from "react";
+import {  useState } from "react";
 import Image from "next/image";
 import { useCarContext } from "@/app/context/CarContext";
 import {  Gauge, Car, Fuel, Settings, Ruler, BatteryCharging, Wind, Zap } from "lucide-react"; 
 
-const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
-  const resolvedParams = use(params);
+const CarDetailPage = ({ params }: { params: { name: string } }) => {
+  const { name } = params;
+
   const { peugeotCars, nissanCars } = useCarContext();
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   const allCars = [...peugeotCars, ...nissanCars];
-  const car = allCars.find((c) => c.name.toLowerCase() === resolvedParams.name);
+  const car = allCars.find((c) => c.name.toLowerCase() === name.toLowerCase());
+
+  console.log("Voiture trouvée :", car);
 
   if (!car) {
     return <div className="text-center mt-10">Voiture non trouvée 😢</div>;
@@ -22,10 +25,11 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 
 
   return (
+    <div>
     <div className="container mx-auto pt-10 pb-10 px-4">
       <div className="w-full mt-6 mb-8">
         <h1 className="text-3xl md:text-4xl font-bold">NISSAN {car.name}</h1>
-        <span className="bg-red-500 text-white px-3 py-1 rounded-full mt-2 inline-block">{car.badge}</span>
+        
       </div>
 
       <div className="flex flex-col gap-6">
@@ -150,7 +154,7 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 </div>
 
 {/* Section trois Colonnes deuxieme ligne  */}
-<div className="mt-10 grid grid-cols-3 md:grid-cols-3 gap-8 items-start">
+<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
   {/* Colonne gauche (image, titre, description) */}
   <div className="flex flex-col gap-4">
     {/* Image dynamique */}
@@ -275,7 +279,15 @@ const CarDetailPage = ({ params }: { params: Promise<{ name: string }> }) => {
 
   
       </div>
-    </div>
+     
+
+    </div> <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
+  <h1 className="text-4xl font-bold mb-4">Intéressé par ce véhicule ?</h1>
+  <button className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
+  Contactez-nous dès maintenant !
+  </button>
+</div>
+</div>
   );
 };
 
