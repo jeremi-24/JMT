@@ -1,16 +1,33 @@
 "use client";
 import {  useState } from "react";
 import Image from "next/image";
+import "../../../globals.css";
 import { useCarContext } from "@/app/context/CarContext";
 import {  Gauge, Car, Fuel, Settings, Ruler, BatteryCharging, Wind, Zap } from "lucide-react"; 
+import { LoaderCircle } from "lucide-react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 
-const CarDetailPage = ({ params }: { params: { name: string } }) => {
-  const { name } = params;
 
-  const { peugeotCars, nissanCars } = useCarContext();
+
+
+const CarDetailPage = () => {
+  const params = useParams();
+  const name = params.name as string;
+
+  const { peugeotCars, nissanCars,fotonCars,loading  } = useCarContext();
   const [selectedImage, setSelectedImage] = useState<string>("");
 
-  const allCars = [...peugeotCars, ...nissanCars];
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+      </div>
+    );
+  }
+
+  const allCars = [...peugeotCars, ...nissanCars, ...fotonCars];
+  console.log("Liste des voitures :", allCars);
   const car = allCars.find((c) => c.name.toLowerCase() === name.toLowerCase());
 
   console.log("Voiture trouvée :", car);
@@ -23,6 +40,7 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
 
   console.log("Données de car.spec :", car.spec);
 
+  
 
   return (
     <div>
@@ -113,7 +131,7 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
 
     {/* Titre dynamique */}
@@ -136,7 +154,7 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
 
     {/* Titre dynamique */}
@@ -156,75 +174,62 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
 {/* Section trois Colonnes deuxieme ligne  */}
 <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
   {/* Colonne gauche (image, titre, description) */}
+  {car.design5 && (
   <div className="flex flex-col gap-4">
-    {/* Image dynamique */}
     <Image
-      src={car.design5?.image || "/default.jpg"} // image dynamique ou fallback
+      src={car.design5.image || "/default.jpg"}
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
-
-    {/* Titre dynamique */}
     <h2 className="text-2xl font-bold text-gray-800">
-      {car.design5?.titre || "Titre du modèle"}
+      {car.design5.titre || "Titre du modèle"}
     </h2>
-
-    {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
-      {car.design5?.description || "Description du modèle non disponible."}
+    <p className="text-gray-600 text-sm md:text-base">
+      {car.design5.description || "Description du modèle non disponible."}
     </p>
   </div>
+)}
 
   {/* Colonne droite (contenu libre ou autres données si tu veux) */}
-  <div className="  rounded-xl ">
+  {car.design6 && (
   <div className="flex flex-col gap-4">
-    {/* Image dynamique */}
     <Image
-      src={car.design6?.image || "/default.jpg"} // image dynamique ou fallback
+      src={car.design6.image || "/default.jpg"}
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
-
-    {/* Titre dynamique */}
     <h2 className="text-2xl font-bold text-gray-800">
-      {car.design6?.titre || "Titre du modèle"}
+      {car.design6.titre || "Titre du modèle"}
     </h2>
-
-    {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
-      {car.design6?.description || "Description du modèle non disponible."}
+    <p className="text-gray-600 text-sm md:text-base">
+      {car.design6.description || "Description du modèle non disponible."}
     </p>
   </div>
+)}
 
-  </div>
      {/* 3em colonne */}
-  <div className="  rounded-xl ">
+     {car.design7 && (
   <div className="flex flex-col gap-4">
-    {/* Image dynamique */}
     <Image
-      src={car.design7?.image || "/default.jpg"} // image dynamique ou fallback
+      src={car.design7.image || "/default.jpg"}
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
-
-    {/* Titre dynamique */}
     <h2 className="text-2xl font-bold text-gray-800">
-      {car.design7?.titre || "Titre du modèle"}
+      {car.design7.titre || "Titre du modèle"}
     </h2>
-
-    {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
-      {car.design7?.description || "Description du modèle non disponible."}
+    <p className="text-gray-600 text-sm md:text-base">
+      {car.design7.description || "Description du modèle non disponible."}
     </p>
   </div>
+)}
 
-  </div>
 </div>
 
 {/* Section Deux Colonnes deuxieme ligne */}
@@ -237,7 +242,7 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
       alt={car.name}
       width={600}
       height={400}
-      className="rounded-xl object-cover"
+      className="image-fixed-size"
     />
 
     {/* Titre dynamique */}
@@ -252,29 +257,32 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
   </div>
 
   {/* Colonne droite (contenu libre ou autres données si tu veux) */}
-  <div className="  rounded-xl ">
-  <div className="flex flex-col gap-4">
-    {/* Image dynamique */}
-    <Image
-      src={car.design4?.image || "/default.jpg"} // image dynamique ou fallback
-      alt={car.name}
-      width={600}
-      height={400}
-      className="rounded-xl object-cover"
-    />
+  
+  {car.design4 && (
+  <div className="rounded-xl">
+    <div className="flex flex-col gap-4">
+      {/* Image dynamique */}
+      <Image
+        src={car.design4.image || "/default.jpg"} // image dynamique ou fallback
+        alt={car.name}
+        width={600}
+        height={400}
+        className="image-fixed-size"
+      />
 
-    {/* Titre dynamique */}
-    <h2 className="text-2xl font-bold text-gray-800">
-      {car.design4?.titre || "Titre du modèle"}
-    </h2>
+      {/* Titre dynamique */}
+      <h2 className="text-2xl font-bold text-gray-800">
+        {car.design4.titre || "Titre du modèle"}
+      </h2>
 
-    {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
-      {car.design4?.description || "Description du modèle non disponible."}
-    </p>
+      {/* Description dynamique */}
+      <p className="text-gray-600 text-sm md:text-base ">
+        {car.design4.description || "Description du modèle non disponible."}
+      </p>
+    </div>
   </div>
+)}
 
-  </div>
 </div>
 
   
@@ -283,9 +291,11 @@ const CarDetailPage = ({ params }: { params: { name: string } }) => {
 
     </div> <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
   <h1 className="text-4xl font-bold mb-4">Intéressé par ce véhicule ?</h1>
-  <button className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
-  Contactez-nous dès maintenant !
-  </button>
+  <Link href="/contact">
+    <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
+      Contactez-nous dès maintenant !
+    </span>
+  </Link>
 </div>
 </div>
   );

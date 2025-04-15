@@ -74,7 +74,7 @@ const CarCard: React.FC<CarCardProps> = ({
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-black text-xl">{name}</h3>
         </div>
-        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-sm truncate text-gray-600">{description}</p>
       </div>
     </div>
   );

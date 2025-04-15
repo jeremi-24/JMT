@@ -5,6 +5,8 @@ import { useCanon } from "@/app/context/CanonContext";
 import CarCard from "@/app/components/card";
 import Image from "next/image";
 import { LoaderCircle } from "lucide-react";
+import Link from "next/link";
+
 
 const heroImages = [ 
   "https://imprimantezone.fr/images/test-de-limprimante-canon-pixma-pro-200-portabilite-et-qualite-des-couleurs.jpg",
@@ -94,6 +96,16 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
+      <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
+  <h1 className="text-4xl font-bold mb-4">Intéressé par ce véhicule ?</h1>
+  <Link href="/contact">
+    <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
+      Contactez-nous dès maintenant !
+    </span>
+  </Link>
+</div>
+
+      
     </main>
   );
 };

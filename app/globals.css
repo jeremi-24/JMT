@@ -314,3 +314,12 @@ body {
     max-width: 30%;
   }
 }
+
+
+/* styles/globals.css */
+.image-fixed-size {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+}

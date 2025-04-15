@@ -2,9 +2,10 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { getNissanCars } from '../utils/Nissan';
+import { getFoton } from '../utils/Foton';
 
 
- export interface Car {
+ export interface Cars {
   images: string[];
   name: string;
   description: string;
@@ -62,8 +63,9 @@ import { getNissanCars } from '../utils/Nissan';
 }
 
 interface CarContextType {
-  peugeotCars: Car[];
-  nissanCars: Car[];
+  peugeotCars: Cars[];
+  nissanCars: Cars[];
+  fotonCars: Cars[]; 
   loading: boolean;
   error: string | null;
 }
@@ -71,7 +73,7 @@ interface CarContextType {
 const CarContext = createContext<CarContextType | undefined>(undefined);
 
 export const CarProvider = ({ children }: { children: ReactNode }) => {
-  const peugeotCars: Car[] = [
+  const peugeotCars: Cars[] = [
     {
       images: [
         "https://th.bing.com/th/id/R.7bfa5deebaaa8ba13318c4a39eb6419d?rik=cmVpjjq%2bAHWm2Q&pid=ImgRaw&r=0",
@@ -288,7 +290,7 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
       images: [
         "https://www.autozeitung.de/assets/styles/article_image/public/field/images/01-peugeot-partner-vorstellung.jpg?itok=MSKTnjot",
         "https://i.bstr.es/espaciofurgo/2024/06/peugeot-e-partner_2-798x466.jpg",
-        "https://vanreviewer.co.uk/peugeot/e-partner/review/3990/",
+        "https://i.bstr.es/espaciofurgo/2021/03/Peugeot-Partner-3.jpg",
         "https://www.peugeot.be/content/dam/peugeot/master/b2c/our-range/showroom/e-partner/new-canvas-update/PEUGEOT_PARTNER_2412DV_003_FR_M_MASTHEAD_1280x1280.jpg?imwidth=768"
       ],
       name: "Partner",
@@ -339,10 +341,11 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
     ,
     {
       images: [
+        "https://www.moteurnature.com/zvisu/1812/53/Peugeot-Landtrek-grand.jpg",
         "https://acnews.blob.core.windows.net/imgnews/medium/NAZ_400e36cb44544129ab981b572d2d53d4.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWb20aB3tRpiPKFqWPAkcAucAEK6qBqGpzvuon-FcZkdjJuiixsyx-M6OsbsnicMKdSic&usqp=CAU",
+        "https://www.peugeot.ma/content/dam/peugeot/morocco/b2c/landtrek/masthead/mobile/peugeot-landtrek-header.jpg?imwidth=768",
         "https://www.peugeot.ma/content/dam/peugeot/morocco/b2c/landtrek/off-road/KP1_Off-Road_DC2_1214_1020.jpg?imwidth=768",
-        "https://www.peugeot.be/content/dam/peugeot/master/b2c/our-range/showroom/e-partner/new-canvas-update/PEUGEOT_PARTNER_2412DV_003_FR_M_MASTHEAD_1280x1280.jpg?imwidth=768"
+       
       ],
       name: "Landtrek",
       description: "Le pick-up moderne et robuste conçu pour le travail comme pour l'aventure.",
@@ -354,37 +357,37 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
         securite: "caméra 360° et aide à la descente"
       },
       design1: {
-        image: "",
+        image: "https://www.media.stellantis.com/cache/c/7/3/4/2/c7342612b4ada8a6a5cd29960ffc793d33c832b5.jpeg",
         titre: "UNE SILHOUETTE PUISSANTE",
         description: "Le PEUGEOT Landtrek arbore un style musclé et contemporain, prêt à affronter tous les terrains."
       },
       design2: {
-        image: "",
+        image: "https://www.largus.fr/images/images/peugeot-landtrek-15.jpg",
         titre: "HABITACLE CONNECTÉ",
         description: "Le cockpit accueille un écran tactile 8'' et une interface intuitive pour rester connecté partout."
       },
       design3: {
-        image: "",
+        image: "https://da4dkroembtou.cloudfront.net/wp-content/uploads/2023/09/Peugeot_Landtrek_B.jpg",
         titre: "POLYVALENCE TOTALE",
         description: "Conçu pour transporter jusqu’à 1 tonne de charge utile, le Landtrek est un outil fiable pour les professionnels."
       },
       design4: {
-        image: "",
+        image: "https://stellantis3.dam-broadcast.com/medias/domain12808/media108611/2583364-2rni2v6rik-whr.jpg",
         titre: "ASSISTANCE ET CONTRÔLE",
         description: "Avec l’aide à la descente, les aides à la conduite et les caméras panoramiques, la sécurité est renforcée."
       },
       design5: {
-        image: "",
+        image: "https://africa.peugeot.com/wp-content/uploads/2022/08/m-landtrek-11.jpg",
         titre: "CONFORT À BORD",
         description: "Sièges ergonomiques, climatisation double zone et finitions soignées pour un confort premium."
       },
       design6: {
-        image: "",
+        image: "https://www.peugeot.ma/content/dam/peugeot/morocco/b2c/landtrek/off-road/KP1_Off-Road_DC2_1214_1020.jpg?imwidth=768",
         titre: "CAPACITÉ TOUT-TERRAIN",
         description: "Sa garde au sol et ses options de transmission intégrale en font un véhicule idéal pour tous les environnements."
       },
       design7: {
-        image: "",
+        image: "https://www.turbo.fr/sites/default/files/styles/slideshow_images/public/slideshow/slides/2020-02/5f8621cf4e3bb.jpg?itok=_kyAYiut",
         titre: "UN ALLIÉ POUR L’AVENTURE",
         description: "Idéal pour les baroudeurs, le Landtrek vous accompagne aussi bien en ville qu’en pleine nature."
       }
@@ -392,15 +395,32 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
     ,  
   ];
 
-  const [nissanCars, setNissanCars] = useState<Car[]>([]);
+  const [nissanCars, setNissanCars] = useState<Cars[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [fotonCars, setFotonCars] = useState<Cars[]>([]); 
 
   useEffect(() => {
     const fetchNissanCars = async () => {
       try {
         const fetchedCars = await getNissanCars();
         setNissanCars(fetchedCars);
+
+        let fotonCarsData: Cars[] = []; // Initialiser un tableau vide
+
+      const unsubscribe = getFoton({
+        onData: (data: Cars[]) => {
+          // Ajouter les nouvelles données au tableau existant au lieu de l'écraser
+          fotonCarsData = fotonCarsData.concat(data); 
+          setFotonCars(fotonCarsData);
+        },
+        onError: (error: string) => {
+          setError(error || "Une erreur s'est produite.");
+        },
+      });
+
+      return () => unsubscribe();
+
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
@@ -416,7 +436,7 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <CarContext.Provider value={{ peugeotCars, nissanCars, loading, error }}>
+    <CarContext.Provider value={{ peugeotCars,fotonCars, nissanCars, loading, error }}>
       {children}
     </CarContext.Provider>
   );
