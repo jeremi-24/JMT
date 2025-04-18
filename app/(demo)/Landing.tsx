@@ -28,7 +28,7 @@ const slideLeft = {
 
 function Landing() {
   return (
-    <main className="space-y-10">
+    <main className="space-y-10 ">
       {/* Animation du Carousel avec zoom */}
       <motion.div variants={scaleIn} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }}>
         <Carousel />

@@ -1,4 +1,6 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
@@ -75,7 +77,28 @@ export default function ContactPage() {
             </button>
           </form>
         </div>
+
+        
       </div>
+
+      <div className="w-full md:w-1/4 mb-6 md:mb-0">
+                  <h3 className="text-sm mb-4 font-bold">SUIVEZ-NOUS</h3>
+                  <div className="flex space-x-4">
+                    <Link href="https://www.facebook.com/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition">
+                      <FaFacebook className="w-5 h-5" />
+                    </Link>
+                    <Link href="https://www.instagram.com/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-pink-600 hover:bg-pink-600 hover:text-white transition">
+                      <FaInstagram className="w-5 h-5" />
+                    </Link>
+                    <Link href="https://tg.linkedin.com/company/japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-blue-700 hover:bg-blue-700 hover:text-white transition">
+                      <FaLinkedin className="w-5 h-5" />
+                    </Link>
+                    <Link href="https://www.tiktok.com/@japanmotorstogo" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 hover:border-black hover:bg-slate-400 hover:text-white transition">
+                      <FaTiktok className="w-5 h-5" />
+                    </Link>
+                  </div>
+                </div>
+              
     </div>
   );
 }

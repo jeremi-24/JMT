@@ -8,7 +8,7 @@ export default function InfoSection() {
       {/* Contenu des blocs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Bloc 1 */}
-        <div className="bg-white rounded-2xl p-4 sm:p-3 hover:shadow-xl transition-all flex flex-col justify-between h-full">
+        <div className="bg-white rounded-2xl p-8 sm:p-6 hover:shadow-xl transition-all flex flex-col justify-between h-full">
           <div>
             <h2 className="text-2xl md:text-4xl font-bold text-left dark:text-black  sm:text-left">100 ANNÉES <br /> D’EXPÉRIENCES</h2>
             <div className="border-t-8 border-[#c3002f] w-1/5 my-6 text-left"></div>
@@ -32,7 +32,7 @@ export default function InfoSection() {
         </div>
 
         {/* Bloc 2 */}
-        <div className="bg-white rounded-2xl p-4 sm:p-3 hover:shadow-xl transition-all flex flex-col justify-between h-full">
+        <div className="bg-white rounded-2xl p-8 sm:p-6 hover:shadow-xl transition-all flex flex-col justify-between h-full">
           <div>
             <h2 className="text-2xl md:text-4xl dark:text-black   font-bold text-left sm:text-left">UNE <br /> PHILOSOPHIE</h2>
             <div className="border-t-8 border-[#c3002f] w-1/5 my-5 text-left"></div>
