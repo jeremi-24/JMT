@@ -71,7 +71,7 @@ const NewsGallery: React.FC = () => {
                 <div className="p-4">
                   <p className="text-gray-600 text-sm">{formatDate(doc.date)}</p>
                   <h3
-  className="text-xl mb-7 dark:text-black font-bold"
+  className="text-sm mb-7 dark:text-black font-bold"
   style={{
     display: '-webkit-box',
     WebkitLineClamp: 2,

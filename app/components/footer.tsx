@@ -57,7 +57,12 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="mt-8 flex justify-between border-t border-gray-600 pt-4">
-          <p className="text-[10px] text-gray-400">© Japan Motors Togo – Powered by Sace Agency</p>
+        <p className="text-[10px] text-gray-400">
+  © Japan Motors Togo – Powered by{' '}
+  <Link href="https://sace-agency.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">
+    Sace Agency
+  </Link>
+</p>
         </div>
       </div>
     </footer>
