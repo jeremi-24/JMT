@@ -8,6 +8,7 @@ interface CarCardProps {
   description: string;
   badgeText: string;
   disableNavigation?: boolean;
+  cible?: "defaut" | "canon";
 }
 
 const CarCard: React.FC<CarCardProps> = ({
@@ -16,6 +17,7 @@ const CarCard: React.FC<CarCardProps> = ({
   description,
   badgeText,
   disableNavigation = false,
+  cible = "defaut",
 }) => {
   const [hoverIndex, setHoverIndex] = useState(0);
 
@@ -79,11 +81,10 @@ const CarCard: React.FC<CarCardProps> = ({
     </div>
   );
 
-  return disableNavigation ? (
-    <div>{CardContent}</div>
-  ) : (
-    <Link href={`/car/${name.toLowerCase()}`}>{CardContent}</Link>
-  );
+  const href =
+    cible === "canon" ? `/canon/${name.toLowerCase()}` : `/car/${name.toLowerCase()}`;
+
+  return disableNavigation ? <div>{CardContent}</div> : <Link href={href}>{CardContent}</Link>
 };
 
 export default CarCard;

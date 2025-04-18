@@ -91,7 +91,8 @@ const Home: React.FC = () => {
               images={[doc.image]}
               name={doc.name}
               description="" badgeText={""}      
-              disableNavigation={true}        
+              disableNavigation={false}   
+              cible="canon"     
             />
           ))}
         </div>
