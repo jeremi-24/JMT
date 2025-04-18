@@ -78,7 +78,7 @@ const CarDetailPage = () => {
         </div>
 
         {/* Description */}
-        <p className="mt-4 text-gray-700 text-justify text-sm md:text-base">{car.description}</p>
+        <p className="mt-4 text-gray-700 text-justify text-sm md:text-base dark:text-white">{car.description}</p>
 
         {/* Spécifications */}
        {/* Spécifications dynamiques */}
@@ -122,7 +122,7 @@ const CarDetailPage = () => {
 </div>
 
 {/* Section Deux Colonnes */}
-<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start dark:text-white">
   {/* Colonne gauche (image, titre, description) */}
   <div className="flex flex-col gap-4">
     {/* Image dynamique */}

@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto p-20">
+    <div className="container mx-auto py-20">
       {/* Conteneur principal des cartes de contact */}
       <div className="flex flex-col md:flex-row   rounded-lg overflow-hidden ">
         {/* Carte Email */}
@@ -31,7 +31,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 dark:bg-white w-full" >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 dark:bg-white " >
         {/* Carte Google Maps */}
         <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
           <iframe
