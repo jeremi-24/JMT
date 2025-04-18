@@ -31,7 +31,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 dark:bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 dark:bg-white w-full" >
         {/* Carte Google Maps */}
         <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
           <iframe
