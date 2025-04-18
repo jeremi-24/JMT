@@ -122,7 +122,7 @@ const CarDetailPage = () => {
 </div>
 
 {/* Section Deux Colonnes */}
-<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start dark:text-white">
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
   {/* Colonne gauche (image, titre, description) */}
   <div className="flex flex-col gap-4">
     {/* Image dynamique */}
@@ -135,12 +135,12 @@ const CarDetailPage = () => {
     />
 
     {/* Titre dynamique */}
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold   dark:text-white  text-gray-800">
       {car.design1?.titre || "Titre du modèle"}
     </h2>
 
     {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
+    <p className="text-gray-600  dark:text-white  text-sm md:text-base ">
       {car.design1?.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -158,12 +158,12 @@ const CarDetailPage = () => {
     />
 
     {/* Titre dynamique */}
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
       {car.design2?.titre || "Titre du modèle"}
     </h2>
 
     {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
+    <p className="text-gray-600   dark:text-white text-sm md:text-base ">
       {car.design2?.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -172,7 +172,7 @@ const CarDetailPage = () => {
 </div>
 
 {/* Section trois Colonnes deuxieme ligne  */}
-<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start dark:text-white">
   {/* Colonne gauche (image, titre, description) */}
   {car.design5 && (
   <div className="flex flex-col gap-4">
@@ -183,10 +183,10 @@ const CarDetailPage = () => {
       height={400}
       className="image-fixed-size"
     />
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
       {car.design5.titre || "Titre du modèle"}
     </h2>
-    <p className="text-gray-600 text-sm md:text-base">
+    <p className="text-gray-600  dark:text-white  text-sm md:text-base">
       {car.design5.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -202,10 +202,10 @@ const CarDetailPage = () => {
       height={400}
       className="image-fixed-size"
     />
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
       {car.design6.titre || "Titre du modèle"}
     </h2>
-    <p className="text-gray-600 text-sm md:text-base">
+    <p className="text-gray-600   dark:text-white text-sm md:text-base">
       {car.design6.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -221,10 +221,10 @@ const CarDetailPage = () => {
       height={400}
       className="image-fixed-size"
     />
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
       {car.design7.titre || "Titre du modèle"}
     </h2>
-    <p className="text-gray-600 text-sm md:text-base">
+    <p className="text-gray-600   dark:text-white text-sm md:text-base">
       {car.design7.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -233,7 +233,7 @@ const CarDetailPage = () => {
 </div>
 
 {/* Section Deux Colonnes deuxieme ligne */}
-<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start dark:text-white">
   {/* Colonne gauche (image, titre, description) */}
   <div className="flex flex-col gap-4">
     {/* Image dynamique */}
@@ -246,12 +246,12 @@ const CarDetailPage = () => {
     />
 
     {/* Titre dynamique */}
-    <h2 className="text-2xl font-bold text-gray-800">
+    <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
       {car.design3?.titre || "Titre du modèle"}
     </h2>
 
     {/* Description dynamique */}
-    <p className="text-gray-600 text-sm md:text-base ">
+    <p className="text-gray-600   dark:text-white text-sm md:text-base ">
       {car.design3?.description || "Description du modèle non disponible."}
     </p>
   </div>
@@ -271,12 +271,12 @@ const CarDetailPage = () => {
       />
 
       {/* Titre dynamique */}
-      <h2 className="text-2xl font-bold text-gray-800">
+      <h2 className="text-2xl font-bold  dark:text-white  text-gray-800">
         {car.design4.titre || "Titre du modèle"}
       </h2>
 
       {/* Description dynamique */}
-      <p className="text-gray-600 text-sm md:text-base ">
+      <p className="text-gray-600   dark:text-white text-sm md:text-base ">
         {car.design4.description || "Description du modèle non disponible."}
       </p>
     </div>
@@ -290,7 +290,7 @@ const CarDetailPage = () => {
      
 
     </div> <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
-  <h1 className="text-4xl font-bold mb-4">Intéressé par ce véhicule ?</h1>
+  <h1 className="text-4xl font-bold mb-4 dark:text-black">Intéressé par ce véhicule ?</h1>
   <Link href="/contact">
     <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
       Contactez-nous dès maintenant !
