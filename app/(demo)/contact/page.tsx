@@ -2,29 +2,48 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto py-20">
+    <div className="w-full mx-auto py-20">
       {/* Conteneur principal des cartes de contact */}
       <div className="flex flex-col md:flex-row   rounded-lg overflow-hidden ">
         {/* Carte Email */}
+
+        <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
+          <Phone className="w-20 h-20 text-[#c3002f] mb-2" />
+          <h3 className="text-2xl font-bold">Contactez-nous <br /> par telephone</h3> <br />
+          <p className="text-gray-700 dark:text-white">Rapide et efficace, pour toute demande, n&apos; hésitez pas à nous appeler au :</p>
+          <br /> <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p> <br />
+          
+          <a href="tel:+22822278554" className="flex items-center rounded-md shadow px-4 py-2 text-white bg-[#c3002f] hover:text-white ">
+  appeler
+</a>
+
+
+        </div>
+
+
         <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
           <Mail className="w-20 h-20 text-[#c3002f] mb-2" />
-          <h3 className="text-lg font-bold">Formulaire de contact</h3>
-          <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
-          <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
+          <h3 className="text-2xl font-bold">Formulaire de contact</h3> <br />
+          <p className="text-gray-700 dark:text-white">Utilisez le formulaire ci-dessous pour nous envoyer un message. Nous vous répondrons dans les plus brefs délais.</p>
+         <br /> <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
+         <br />
+          
+          <a href="mailto:contact@japanmotorstogo.com" className="flex items-center rounded-md shadow px-4 py-2 text-white bg-[#c3002f] hover:text-white ">
+  Ecrire
+</a>
+
         </div>
 
         {/* Carte Téléphone */}
-        <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
-          <Phone className="w-20 h-20 text-[#c3002f] mb-2" />
-          <h3 className="text-lg font-bold">Contactez-nous par telephone</h3>
-          <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p>
-          <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p>
-        </div>
+        
 
         {/* Carte Adresse */}
         <div className="flex-1 p-6 text-center flex flex-col items-center">
           <MapPin className="w-20 h-20 text-[#c3002f] mb-2" />
-          <h3 className="text-lg font-bold">L&apos;agence Japan Motors Togo</h3>
+          <h3 className="text-2xl font-bold">L&apos;agence Japan <br /> Motors Togo</h3> <br />
+          <p className="text-gray-700 dark:text-white">
+          Venez prendre un café ou un thé à l&apos;agence, nous serons ravis de vous accueillir à l&apos;adresse suivante :
+          </p> <br />
           <p className="text-gray-700 dark:text-white">
             815, Bd. de l’Oti, à côté de l’Eglise Evangélique Presbytérienne Bè Kpota – 01 BP 4715 Lomé 1 Lomé – Togo
           </p>
