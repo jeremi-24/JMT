@@ -33,9 +33,9 @@ const ArticlePage: React.FC = () => {
   return (
     <div>
     <div className="max-w-5xl mx-auto w-full px-2 py-10 t">
-      <h1 className="text-4xl  text-left uppercase font-bold">{article.titre}</h1>
+      <h1 className="text-4xl  text-left uppercase  font-bold">{article.titre}</h1>
       {article.image && article.image.length > 0 && (
-        <div className="relative w-full h-96 my-4 rounded-lg overflow-hidden">
+        <div className="relative w-full h-96 my-8 rounded-lg overflow-hidden">
           <Image
             src={article.image[0]}
             alt="Illustration de l'article"

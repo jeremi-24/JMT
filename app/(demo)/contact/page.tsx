@@ -2,26 +2,28 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-20">
       {/* Conteneur principal des cartes de contact */}
       <div className="flex flex-col md:flex-row   rounded-lg overflow-hidden ">
         {/* Carte Email */}
         <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
-          <Mail className="w-10 h-10 text-[#c3002f] mb-2" />
+          <Mail className="w-20 h-20 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">Formulaire de contact</h3>
+          <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
           <p className="text-gray-700 dark:text-white">contact@japanmotorstogo.com</p>
         </div>
 
         {/* Carte Téléphone */}
         <div className="flex-1 p-6 text-center flex flex-col items-center border-r border-gray-300">
-          <Phone className="w-10 h-10 text-[#c3002f] mb-2" />
+          <Phone className="w-20 h-20 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">Contactez-nous par telephone</h3>
+          <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p>
           <p className="text-gray-700 dark:text-white">+228 22 27 85 54 / 22 27 85 55</p>
         </div>
 
         {/* Carte Adresse */}
         <div className="flex-1 p-6 text-center flex flex-col items-center">
-          <MapPin className="w-10 h-10 text-[#c3002f] mb-2" />
+          <MapPin className="w-20 h-20 text-[#c3002f] mb-2" />
           <h3 className="text-lg font-bold">L&apos;agence Japan Motors Togo</h3>
           <p className="text-gray-700 dark:text-white">
             815, Bd. de l’Oti, à côté de l’Eglise Evangélique Presbytérienne Bè Kpota – 01 BP 4715 Lomé 1 Lomé – Togo
@@ -29,7 +31,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 dark:bg-white">
         {/* Carte Google Maps */}
         <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
           <iframe
