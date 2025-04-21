@@ -9,6 +9,7 @@ interface Canon {
   id: string;
   name: string;
   image: string;
+  badge: string;
   spec:{
     type?: string;
     format?: string;

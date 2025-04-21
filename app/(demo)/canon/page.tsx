@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 import { useCanon } from "@/app/context/CanonContext";
 import CarCard from "@/app/components/card";
@@ -7,8 +7,7 @@ import Image from "next/image";
 import { LoaderCircle } from "lucide-react";
 import Link from "next/link";
 
-
-const heroImages = [ 
+const heroImages = [
   "https://imprimantezone.fr/images/test-de-limprimante-canon-pixma-pro-200-portabilite-et-qualite-des-couleurs.jpg",
   "https://i1.adis.ws/i/canon/pixma-ts7440-ss-bk-ambient-02_1920x1080-7bb8a552-ffb4-11ea-a3c4-b083fea00fac?w=1920",
   "https://pic.clubic.com/v1/images/2257181/raw",
@@ -20,6 +19,14 @@ const heroImages = [
 const Home: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
   const { documents, loading, error } = useCanon();
+  const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>({});
+
+  const toggleAccordion = (badge: string) => {
+    setOpenAccordions((prev) => ({
+      ...prev,
+      [badge]: !prev[badge],
+    }));
+  };
 
   const heroSettings = {
     dots: false,
@@ -41,12 +48,21 @@ const Home: React.FC = () => {
     sliderRef.current?.slickNext();
   };
 
-  if (loading)  return (
-        <div className="flex justify-center items-center h-screen">
-          <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
-        </div>
-      );
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <LoaderCircle className="w-12 h-12 animate-spin text-blue-500" />
+      </div>
+    );
+
   if (error) return <div>Erreur: {error}</div>;
+
+  const groupedDocuments = documents.reduce((acc, doc) => {
+    const badge = doc.badge || "Autres";
+    if (!acc[badge]) acc[badge] = [];
+    acc[badge].push(doc);
+    return acc;
+  }, {} as Record<string, typeof documents>);
 
   return (
     <main>
@@ -60,13 +76,13 @@ const Home: React.FC = () => {
         </button>
         <Slider ref={sliderRef} {...heroSettings}>
           {heroImages.map((image, index) => (
-            <div key={index} className="w-full  h-[300px] md:h-[500px]">
+            <div key={index} className="w-full h-[300px] md:h-[500px]">
               <Image
                 src={image}
                 alt={`Hero Image ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
-                 objectPosition="center"
+                objectPosition="center"
               />
             </div>
           ))}
@@ -78,35 +94,58 @@ const Home: React.FC = () => {
           &#10095;
         </button>
       </div>
-      
+
       <div className="container mx-auto p-4 my-8">
-        {/* Section des voitures */} <h2 className="text-4xl  font-semibold mb-6">Representant officiel <br /> de Canon au Togo</h2>
+        <h2 className="text-4xl font-semibold mb-6">
+          Représentant officiel <br /> de Canon au Togo
+        </h2>
         <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
-        <h4 className="text-2xl mb-6">Nos imprimantes Canon compactes et puissantes offrent des résultats exceptionnels depuis le confort de votre maison</h4>
+        <h4 className="text-2xl mb-6">
+          Nos imprimantes Canon compactes et puissantes offrent des résultats
+          exceptionnels depuis le confort de votre maison
+        </h4>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {documents.map((doc, index) => (
-            <CarCard
-              key={index}
-              images={[doc.image]}
-              name={doc.name}
-              description="" badgeText={""}      
-              disableNavigation={false}   
-              cible="canon"     
-            />
-          ))}
-        </div>
+        {Object.entries(groupedDocuments).map(([badge, docs]) => (
+          <div key={badge} className="mb-6 border rounded-md">
+            <button
+              onClick={() => toggleAccordion(badge)}
+              className="w-full flex justify-between items-center px-4 py-3 bg-[#c3002f] text-white text-left font-bold text-lg focus:outline-none"
+            >
+              {badge}
+              <span className="ml-4">
+                {openAccordions[badge] ? "↑" : "↓"}
+              </span>
+            </button>
+
+            {openAccordions[badge] && (
+              <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                {docs.map((doc, index) => (
+                  <CarCard
+                    key={index}
+                    images={[doc.image]}
+                    name={doc.name}
+                    description=""
+                    badgeText={badge}
+                    disableNavigation={false}
+                    cible="canon"
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-      <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
-  <h1 className="text-4xl font-bold mb-4">Intéressé par ce véhicule ?</h1>
-  <Link href="/contact">
-    <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
-      Contactez-nous dès maintenant !
-    </span>
-  </Link>
-</div>
 
-      
+      <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
+        <h1 className="text-4xl font-bold mb-4">
+          Intéressé par ce véhicule ?
+        </h1>
+        <Link href="/contact">
+          <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
+            Contactez-nous dès maintenant !
+          </span>
+        </Link>
+      </div>
     </main>
   );
 };
