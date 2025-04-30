@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   * {
     font-family: var(--font-peugeot), sans-serif;
@@ -17,6 +19,7 @@
   --foreground: #171717;
   font-family: 'Peugeot', sans-serif;
 }
+
 span {
   font-weight: bold;
   font-family: 'Peugeot', sans-serif !important;
@@ -47,4 +50,276 @@ body {
 
 .custom-content img {
   display: none !important;
+}
+
+
+/* Styles pour les articles */
+.post {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres */
+.post h1, 
+.post h2, 
+.post h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Liens */
+.post a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.post a:hover {
+  color: #005177;
+  text-decoration: underline;
+}
+
+/* Images dans les articles */
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Galerie d'images */
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.wp-block-gallery .wp-block-image {
+  flex: 1 1 45%;
+  max-width: 65%;
+  
+}
+
+
+/* Conteneur principal de l'article */
+.wp-block-post-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  text-align:left;
+}
+
+/* Bloc citation */
+.wp-block-quote {
+  font-style: italic;
+  border-left: 4px solid #0073aa;
+  padding-left: 15px;
+  color: #666;
+  text-align: left;
+}
+
+/* Boutons */
+.wp-block-button {
+  display: inline-block;
+  background-color: #0073aa;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.wp-block-button:hover {
+  background-color: #005177;
+}
+
+/* Conteneur principal de l'article */
+.detailpost {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Espacement vertical entre les éléments */
+.detailpost p,
+.detailpost ul,
+.detailpost ol,
+.detailpost blockquote,
+.detailpost h1,
+.detailpost h2,
+.detailpost h3,
+.detailpost h4,
+.detailpost h5,
+.detailpost h6,
+.detailpost img,
+.detailpost figure {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  
+}
+
+/* Titres */
+.detailpost h1, 
+.detailpost h2, 
+.detailpost h3 {
+
+  font-weight: bold;
+  color: #333;
+}
+
+/* Liens */
+.detailpost a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.detailpost a:hover {
+  color: #005177;
+  text-decoration: underline;
+}
+
+/* Images dans les articles */
+.detailpost img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Galerie d'images */
+.detailpost .wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.detailpost .wp-block-gallery .wp-block-image {
+  flex: 1 1 45%;
+  max-width: 45%;
+ 
+}
+.wp-block-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Bloc citation */
+.detailpost blockquote {
+  font-style: italic;
+  border-left: 4px solid #0073aa;
+  padding-left: 15px;
+  color: #666;
+  line-height: 2;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Espacement entre les paragraphes dans les blockquotes */
+.detailpost blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+/* Boutons */
+.detailpost .wp-block-button {
+  display: inline-block;
+  background-color: #0073aa;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.detailpost .wp-block-button:hover {
+  background-color: #005177;
+}
+
+/* Liste bien espacée */
+.detailpost ul,
+.detailpost ol {
+  padding-left: 1.5rem;
+}
+
+.police{
+  font-family: var(--font-peugeot), sans-serif !important;
+}
+
+/* ---------- RESPONSIVITÉ ---------- */
+
+/* Petits écrans (smartphones) */
+@media (max-width: 767px) {
+  .post, .detailpost {
+    padding: 15px;
+  }
+
+  .post h1, .detailpost h1 {
+    font-size: 1.5rem;
+  }
+
+  .post h2, .detailpost h2 {
+    font-size: 1.25rem;
+  }
+
+  .post h3, .detailpost h3 {
+    font-size: 1.125rem;
+  }
+
+  .wp-block-gallery,
+  .detailpost .wp-block-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .wp-block-button,
+  .detailpost .wp-block-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .detailpost ul,
+  .detailpost ol {
+    padding-left: 1rem;
+  }
+}
+
+/* Moyens écrans (tablettes) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+}
+
+/* Grands écrans (desktop) */
+@media (min-width: 1025px) {
+  .wp-block-gallery .wp-block-image,
+  .detailpost .wp-block-gallery .wp-block-image {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
+
+
+/* styles/globals.css */
+.image-fixed-size {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
 }

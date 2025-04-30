@@ -10,6 +10,56 @@ interface Foton {
   description: string;
   badge: string;
   images: string[];
+  design1?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design2?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design3?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design4?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design5?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design6?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design7?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  spec?: {
+    moteur?: string;    // 👈 optionnel
+    vitesse?: string; 
+     puissance? :string;
+     consommation? :string;
+     securite? :string;
+     confort? :string;
+     connectivite? :string;
+     longueur? :string;
+     largeur? :string;
+     hauteur? :string;
+     transmission? :string;
+     systeme ? :string; // 👈 optionnel
+  };
+ 
 }
 
 // Définition du type du contexte

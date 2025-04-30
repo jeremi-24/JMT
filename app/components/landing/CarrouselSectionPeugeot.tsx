@@ -57,7 +57,7 @@ const CarrouselSection: React.FC = () => {
       onWheel={handleWheel}
     >
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-4xl font-bold text-left">NOS VEHICULES PEUGEOT</h2>
+        <h2 className="text-4xl font-bold text-left">NOS  PEUGEOT</h2>
         
       </div>
       <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>

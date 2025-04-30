@@ -18,7 +18,7 @@ export default function SectionAffiches() {
     <section className="bg-gray-100 py-8 px-6 md:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto text-center">
       
-        <h2 className="text-4xl font-bold  text-left">DÉCOUVREZ CANON, FOTON ET LASSA</h2>
+        <h2 className="text-4xl font-bold dark:text-black text-left">DÉCOUVREZ CANON, FOTON ET LASSA</h2>
         <div className="border-t-8 mb-8 mt-5 border-red-500 w-1/5"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {affiches.map((affiche) => (

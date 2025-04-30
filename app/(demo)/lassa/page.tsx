@@ -90,6 +90,7 @@ const Home: React.FC = () => {
                   name={car.name}
                   badgeText={car.badge}
                   description=""
+                  disableNavigation={true}
                 />
               ))}
             </div>

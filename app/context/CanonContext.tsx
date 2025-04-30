@@ -9,6 +9,20 @@ interface Canon {
   id: string;
   name: string;
   image: string;
+  badge: string;
+  spec:{
+    type?: string;
+    format?: string;
+    vitesse?: string;
+    resolution?: string;
+    fonction?: string;
+    qualite?: string;
+    memoire?: string;
+    interface?: string;
+    capacite?: string;
+    dimensions?: string;
+    poids?: string;
+  };
 }
 
 // Définition du type du contexte

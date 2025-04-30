@@ -8,11 +8,20 @@ import { ArrowRight, LoaderCircle } from "lucide-react";
 
 export default function Page() {
   const { documents, loading, error } = useBlog();
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+  
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen dark:bg-transparent bg-gray-100">
       <div className="container mx-auto px-4 py-10">
-        <h2 className="text-4xl font-semibold mb-4 text-gray-900">
+        <h2 className="text-4xl dark:text-white font-semibold mb-4 text-gray-900">
           NOS ACTUALITÉS
         </h2>
         <div className="border-t-8 border-[#c3002f] w-1/6 mb-10"></div>
@@ -28,7 +37,7 @@ export default function Page() {
           {documents.map((doc, index) => (
             <Link href={`/blog/${String(doc.id).toLowerCase()}`} key={doc.id}>
               <motion.div
-                className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
+                className="bg-white  shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-[340px] flex flex-col"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -57,17 +66,18 @@ export default function Page() {
                 </div>
 
                 <div className="flex flex-col justify-between gap-2 p-3 text-sm text-gray-500 flex-grow">
-                  <h5>{doc.date}</h5>
+                  <h5>{formatDate(doc.date)}</h5>
 
                   
                   <div
-  className=" text-sm font-semibold text-gray-900 line-clamp-2 overflow-hidden text-ellipsis"
+  className="text-sm font-semibold text-gray-900 line-clamp-4 overflow-hidden text-ellipsis"
   dangerouslySetInnerHTML={{ __html: doc.titre }}
 />
 
+
                   <div>
-                    <button className="flex items-center text-[#c3002f] hover:text-red-900">
-                      <span>Lire plus</span>
+                    <button className="flex items-center police text-[#c3002f] hover:text-red-900">
+                      <span className="police">Lire plus</span>
                       <ArrowRight className="ml-1" />
                     </button>
                   </div>

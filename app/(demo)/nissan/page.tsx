@@ -39,13 +39,6 @@ const Home: React.FC = () => {
     );
   if (error) return <div>Erreur: {error}</div>;
 
-  // Regrouper les voitures par badge
-  const groupedCars = cars.reduce((acc, car) => {
-    if (!acc[car.badge]) acc[car.badge] = [];
-    acc[car.badge].push(car);
-    return acc;
-  }, {} as Record<string, typeof cars>);
-
   return (
     <main>
       {/* Hero Slider */}
@@ -79,26 +72,20 @@ const Home: React.FC = () => {
       </div>
 
       <div className="container mx-auto p-4 my-8">
-        {/* Section des voitures */}
-        {Object.entries(groupedCars).map(([badge, cars]) => (
-          <div key={badge} className="mb-10">
-            <h3 className="text-4xl font-semibold uppercase mb-4">Nos {badge}</h3>
-            <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
-            
-            {/* Grille sur desktop, colonne sur mobile */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-              {cars.map((car, index) => (
-                <CarCard
-                  key={index}
-                  images={car.images}
-                  name={car.name}
-                  description={car.description}
-                  badgeText={car.badge}
-                />
-              ))}
-            </div>
-          </div>
-        ))}
+        <h3 className="text-4xl font-semibold uppercase mb-4">Nos véhicules</h3>
+        <div className="border-t-8 border-[#c3002f] w-1/5 mb-10"></div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cars.map((car, index) => (
+            <CarCard
+              key={index}
+              images={car.images}
+              name={car.name}
+              description={car.description}
+              badgeText={car.badge}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
