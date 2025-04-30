@@ -1,0 +1,125 @@
+"use client";
+import React, { createContext, useState, useContext, useEffect, ReactNode } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase/config";
+
+
+// Définition du type des documents Foton
+interface Foton {
+  name: string;
+  description: string;
+  badge: string;
+  images: string[];
+  design1?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design2?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design3?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design4?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design5?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design6?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  design7?:{
+    titre:string;
+    description:string;
+    image:string;
+  };
+  spec?: {
+    moteur?: string;    // 👈 optionnel
+    vitesse?: string; 
+     puissance? :string;
+     consommation? :string;
+     securite? :string;
+     confort? :string;
+     connectivite? :string;
+     longueur? :string;
+     largeur? :string;
+     hauteur? :string;
+     transmission? :string;
+     systeme ? :string; // 👈 optionnel
+  };
+ 
+}
+
+// Définition du type du contexte
+interface FotonContextType {
+  documents: Foton[];
+  loading: boolean;
+  error: string | null;
+}
+
+// Création du contexte
+const FotonContext = createContext<FotonContextType | undefined>(undefined);
+
+// Création du Provider
+interface FotonProviderProps {
+  children: ReactNode;
+}
+
+export const FotonProvider: React.FC<FotonProviderProps> = ({ children }) => {
+  const [documents, setDocuments] = useState<Foton[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      collection(db, "brands/Foton/model"),
+      (snapshot) => {
+        const fetchedDocs: Foton[] = snapshot.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            name: data.name || "Nom inconnu", // Valeur par défaut si absent
+            description: data.description || "Aucune description",
+            badge: data.badge || "Aucun badge",
+            images: Array.isArray(data.images) ? data.images : [],
+          };
+        });
+  
+        setDocuments(fetchedDocs);
+        setLoading(false);
+      },
+      (err) => {
+        setError(err.message);
+        setLoading(false);
+      }
+    );
+  
+    return () => unsubscribe();
+  }, []);
+  
+
+  return (
+    <FotonContext.Provider value={{ documents, loading, error }}>
+      {children}
+    </FotonContext.Provider>
+  );
+};
+
+// Hook personnalisé pour utiliser le contexte
+export const useFoton = (): FotonContextType => {
+  const context = useContext(FotonContext);
+  if (!context) {
+    throw new Error("useCanon doit être utilisé dans un CanonProvider");
+  }
+  return context;
+};
