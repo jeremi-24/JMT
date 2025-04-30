@@ -137,13 +137,13 @@ const Home: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center h-[250px] bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-4xl font-bold mb-10 dark:text-black">
           Intéressé par ce véhicule ?
         </h1>
         <Link href="/contact">
-          <span className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
+          <h5 className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
             Contactez-nous dès maintenant !
-          </span>
+          </h5>
         </Link>
       </div>
     </main>
