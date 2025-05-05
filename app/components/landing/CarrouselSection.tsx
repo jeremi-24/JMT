@@ -43,7 +43,7 @@ const CarrouselSection: React.FC = () => {
       {
         breakpoint: 1440, // Pour les écrans plus grands
         settings: {
-          slidesToShow: 4, // Afficher trois cartes par slide
+          slidesToShow: 3, // Afficher trois cartes par slide
           slidesToScroll: 1,
         },
       },

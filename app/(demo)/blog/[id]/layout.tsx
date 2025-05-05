@@ -1,8 +1,6 @@
+// app/blog/layout.tsx
 import { ReactNode } from "react";
-
-export const metadata = {
-  title: "Blog",
-};
+import Head from "next/head";
 
 type BlogLayoutProps = {
   children: ReactNode;
@@ -10,17 +8,14 @@ type BlogLayoutProps = {
 
 export default function BlogLayout({ children }: BlogLayoutProps) {
   return (
-    <html lang="fr">
-      <head>
-        {/* Feuille de style WordPress uniquement pour le blog */}
+    <>
+      <Head>
         <link
           rel="stylesheet"
           href="https://japanmotorstogo.com/wp-content/themes/ton-theme/style.css"
         />
-      </head>
-      <body>
-        {children}
-      </body>
-    </html>
+      </Head>
+      {children}
+    </>
   );
 }
