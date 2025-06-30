@@ -6,15 +6,20 @@ const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [ 
-    { id: 1, image: "https://japanmotorstogo.com/wp-content/uploads/2024/07/grenadier-1.jpg", alt: "Grenadier" },
-    { id: 2, image: "https://japanmotorstogo.com/wp-content/uploads/2023/07/Foton-Aumark-Roi-Du-Cargo.jpg", alt: "Foton Aumark Roi Du Cargo" },
-    { id: 3, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-301.jpg", alt: "Peugeot 301" },
-    { id: 4, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Nissan-Patrol.jpg", alt: "Nissan Patrol" },
-    { id: 5, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-Landtrek.jpg", alt: "Peugeot Landtrek" },
-    { id: 6, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-508.jpg", alt: "Peugeot 508" },
-    { id: 7, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-3008.jpg", alt: "Peugeot 3008" },
-    { id: 8, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-2008.jpg", alt: "Peugeot 2008" },
-    { id: 9, image: "https://japanmotorstogo.com/wp-content/uploads/2022/03/Peugeot-5008.jpg", alt: "Peugeot 5008" }
+    { id: 1, image: "/SLIDE-JMT-SITE-1.jpg", alt: "Slide 1" },
+    { id: 2, image: "/SLIDE-JMT-SITE-2.jpg", alt: "Slide 2" },
+    { id: 3, image: "/SLIDE-JMT-SITE-3.jpg", alt: "Slide 3" },
+    { id: 4, image: "/SLIDE-JMT-SITE-4.jpg", alt: "Slide 4" },
+    { id: 5, image: "/SLIDE-JMT-SITE-5.jpg", alt: "Slide 5" },
+    { id: 6, image: "/SLIDE-JMT-SITE-6.jpg", alt: "Slide 6" },
+    { id: 7, image: "/SLIDE-JMT-SITE-7.jpg", alt: "Slide 7" },
+    { id: 8, image: "/SLIDE-JMT-SITE-8.jpg", alt: "Slide 8" },
+    { id: 9, image: "/SLIDE-JMT-SITE-9.jpg", alt: "Slide 9" },
+    { id: 10, image: "/SLIDE-JMT-SITE-10.jpg", alt: "Slide 10" },
+    { id: 11, image: "/SLIDE-JMT-SITE-11.jpg", alt: "Slide 11" },
+    { id: 12, image: "/SLIDE-JMT-SITE-12.jpg", alt: "Slide 12" },
+    { id: 13, image: "/SLIDE-JMT-SITE-13.jpg", alt: "Slide 13" },
+    { id: 14, image: "/SLIDE-JMT-SITE-14.jpg", alt: "Slide 14" }
 ];
 
 
