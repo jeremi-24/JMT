@@ -42,7 +42,7 @@ export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("https://japanmotorstogo.com/wp-json/wp/v2/posts");
+        const response = await fetch("https://cms.japanmotorstogo.com/wp-json/wp/v2/posts");
         if (!response.ok) {
           throw new Error("Erreur lors du chargement des articles");
         }
