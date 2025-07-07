@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/home/user/JMT/app/layout":["static/media/452c67c2edf1d4da-s.p.otf","static/media/b5525b300eb689fd-s.p.otf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
