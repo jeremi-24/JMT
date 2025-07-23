@@ -40,13 +40,18 @@ const CarDetailPage = () => {
 
   console.log("Données de car.spec :", car.spec);
 
+  let brand = "Inconnue";
+if (peugeotCars.includes(car)) brand = "Peugeot";
+if (nissanCars.includes(car)) brand = "Nissan";
+if (fotonCars.includes(car)) brand = "Foton";
+
   
 
   return (
     <div>
     <div className="container mx-auto pt-10 pb-10 px-4">
       <div className="w-full mt-6 mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold">NISSAN {car.name}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">>{brand} {car.name}</h1>
         
       </div>
 
