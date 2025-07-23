@@ -51,7 +51,7 @@ if (fotonCars.includes(car)) brand = "Foton";
     <div>
     <div className="container mx-auto pt-10 pb-10 px-4">
       <div className="w-full mt-6 mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold">>{brand} {car.name}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">{brand} {car.name}</h1>
         
       </div>
 
