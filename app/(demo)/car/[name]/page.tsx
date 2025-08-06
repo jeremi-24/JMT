@@ -61,8 +61,8 @@ if (fotonCars.includes(car)) brand = "Foton";
           <Image
             src={mainImage}
             alt={car.name}
-            width={800}
-            height={100}
+            width={600}
+            height={400}
             className="rounded-lg w-full h-auto object-contain"
           />
         </div>
