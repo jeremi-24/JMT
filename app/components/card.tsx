@@ -47,7 +47,7 @@ const CarCard: React.FC<CarCardProps> = ({
         <Image
           src={images[hoverIndex]}
           alt={name}
-          layout="fill"
+          fill
           objectFit="cover"
           className="transition-all duration-300 ease-in-out group-hover:opacity-90"
         />

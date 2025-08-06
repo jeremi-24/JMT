@@ -20,7 +20,17 @@
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/17-26bf8a1c165c55b0.js",
       "static/chunks/84-3c12f47ef71c247b.js",
-      "static/chunks/app/layout-7623746fa9c81b45.js"
+      "static/chunks/app/layout-5693750b16b90c23.js"
+    ],
+    "/(demo)/blog/page": [
+      "static/chunks/webpack-589830bf994fecce.js",
+      "static/chunks/4bd1b696-aaf09b882924c802.js",
+      "static/chunks/517-58b6b35fea3d6080.js",
+      "static/chunks/main-app-d1e684ee8e0a3019.js",
+      "static/chunks/565-354aea4cf1026dfd.js",
+      "static/chunks/173-1ec79c581afb301e.js",
+      "static/chunks/210-6d723378a6b5fb21.js",
+      "static/chunks/app/(demo)/blog/page-4d6a5f3b376b7f9b.js"
     ],
     "/(demo)/canon/[name]/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -31,7 +41,7 @@
       "static/chunks/bc9e92e6-280c8316183283be.js",
       "static/chunks/565-354aea4cf1026dfd.js",
       "static/chunks/100-3b6318b79d91036c.js",
-      "static/chunks/app/(demo)/canon/[name]/page-2b3cd1f62a46bd16.js"
+      "static/chunks/app/(demo)/canon/[name]/page-a8b2b5bb03d54bf8.js"
     ],
     "/(demo)/canon/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -43,7 +53,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/151-e5a0cf50283d6866.js",
-      "static/chunks/app/(demo)/canon/page-9fa25bad5790c995.js"
+      "static/chunks/app/(demo)/canon/page-cdb6c98a662cb793.js"
     ],
     "/(demo)/car/[name]/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -56,7 +66,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/84-3c12f47ef71c247b.js",
-      "static/chunks/app/(demo)/car/[name]/page-c5d014b691d4e1bc.js"
+      "static/chunks/app/(demo)/car/[name]/page-7fd866f43f3af1ee.js"
     ],
     "/(demo)/contact/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -76,7 +86,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/151-e5a0cf50283d6866.js",
-      "static/chunks/app/(demo)/foton/page-0f807aef9ac0f3ff.js"
+      "static/chunks/app/(demo)/foton/page-8e00c138e697c938.js"
     ],
     "/(demo)/historique/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -95,7 +105,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/151-e5a0cf50283d6866.js",
-      "static/chunks/app/(demo)/lassa/page-c294437c70551024.js"
+      "static/chunks/app/(demo)/lassa/page-2467ea0ec1598183.js"
     ],
     "/(demo)/newcanon/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -116,7 +126,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/100-3b6318b79d91036c.js",
       "static/chunks/151-e5a0cf50283d6866.js",
-      "static/chunks/app/(demo)/nissan/page-c9da9a64b57b279d.js"
+      "static/chunks/app/(demo)/nissan/page-feae96a4043dad5b.js"
     ],
     "/(demo)/peugeot/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -127,7 +137,7 @@
       "static/chunks/173-1ec79c581afb301e.js",
       "static/chunks/151-e5a0cf50283d6866.js",
       "static/chunks/17-26bf8a1c165c55b0.js",
-      "static/chunks/app/(demo)/peugeot/page-fbf5f48cb34b8a0d.js"
+      "static/chunks/app/(demo)/peugeot/page-91b04417029f559d.js"
     ],
     "/(demo)/promotion-nissan/page": [
       "static/chunks/webpack-589830bf994fecce.js",
@@ -150,17 +160,7 @@
       "static/chunks/210-6d723378a6b5fb21.js",
       "static/chunks/848-d7c880be145fa702.js",
       "static/chunks/17-26bf8a1c165c55b0.js",
-      "static/chunks/app/page-dc8d5961f2495315.js"
-    ],
-    "/(demo)/blog/page": [
-      "static/chunks/webpack-589830bf994fecce.js",
-      "static/chunks/4bd1b696-aaf09b882924c802.js",
-      "static/chunks/517-58b6b35fea3d6080.js",
-      "static/chunks/main-app-d1e684ee8e0a3019.js",
-      "static/chunks/565-354aea4cf1026dfd.js",
-      "static/chunks/173-1ec79c581afb301e.js",
-      "static/chunks/210-6d723378a6b5fb21.js",
-      "static/chunks/app/(demo)/blog/page-4d6a5f3b376b7f9b.js"
+      "static/chunks/app/page-9c400904ab89c25d.js"
     ],
     "/(demo)/blog/[id]/layout": [
       "static/chunks/webpack-589830bf994fecce.js",

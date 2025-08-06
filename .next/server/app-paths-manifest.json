@@ -1,6 +1,7 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(demo)/blog/page": "app/(demo)/blog/page.js",
   "/(demo)/canon/[name]/page": "app/(demo)/canon/[name]/page.js",
   "/(demo)/canon/page": "app/(demo)/canon/page.js",
   "/(demo)/car/[name]/page": "app/(demo)/car/[name]/page.js",
@@ -13,6 +14,5 @@
   "/(demo)/peugeot/page": "app/(demo)/peugeot/page.js",
   "/(demo)/promotion-nissan/page": "app/(demo)/promotion-nissan/page.js",
   "/page": "app/page.js",
-  "/(demo)/blog/page": "app/(demo)/blog/page.js",
   "/(demo)/blog/[id]/page": "app/(demo)/blog/[id]/page.js"
 }
