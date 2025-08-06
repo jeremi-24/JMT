@@ -55,7 +55,8 @@ if (fotonCars.includes(car)) brand = "Foton";
         
       </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col  gap-6">
+      <div className="flex justify-arround md:flex-row flex-col items-center gap-1">
         {/* Image principale */}
         <div className="w-full">
           <Image
@@ -63,24 +64,27 @@ if (fotonCars.includes(car)) brand = "Foton";
             alt={car.name}
             width={600}
             height={400}
-            className="rounded-lg w-full h-auto object-contain"
+            className="rounded-lg  object-contain"
           />
         </div>
 
         {/* Miniatures */}
-        <div className="flex gap-2 mt-4 overflow-x-auto justify-between">
-          {car.images.map((img, index) => (
-            <Image
-              key={index}
-              src={img}
-              alt={'Image ${index}'}
-              width={250}
-              height={70}
-              className="rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105 object-cover"
-              onClick={() => setSelectedImage(img)}
-            />
-          ))}
+        <div className="grid grid-cols-2 justify-arround gap-2 h-3/4 mt-4 w-1/2 overflow-auto">
+  {car.images.slice(0, 4).map((img, index) => (
+    <Image
+      key={index}
+      src={img}
+      alt={`Image ${index}`}
+      width={250}
+      height={70}
+      className="rounded-lg cursor-pointer transition-transform duration-200 hover:scale-90 object-cover"
+      onClick={() => setSelectedImage(img)}
+    />
+  ))}
+</div>
+
         </div>
+
 
         {/* Description */}
         <p className="mt-4 text-gray-700 text-justify text-sm md:text-base dark:text-white">{car.description}</p>

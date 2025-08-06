@@ -1,18 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(demo)/canon/page": "app/(demo)/canon/page.js",
-  "/(demo)/car/[name]/page": "app/(demo)/car/[name]/page.js",
-  "/(demo)/canon/[name]/page": "app/(demo)/canon/[name]/page.js",
-  "/(demo)/blog/page": "app/(demo)/blog/page.js",
-  "/(demo)/historique/page": "app/(demo)/historique/page.js",
-  "/(demo)/lassa/page": "app/(demo)/lassa/page.js",
-  "/(demo)/nissan/page": "app/(demo)/nissan/page.js",
-  "/(demo)/newcanon/page": "app/(demo)/newcanon/page.js",
-  "/(demo)/peugeot/page": "app/(demo)/peugeot/page.js",
-  "/(demo)/promotion-nissan/page": "app/(demo)/promotion-nissan/page.js",
   "/page": "app/page.js",
-  "/(demo)/contact/page": "app/(demo)/contact/page.js",
-  "/(demo)/blog/[id]/page": "app/(demo)/blog/[id]/page.js",
-  "/(demo)/foton/page": "app/(demo)/foton/page.js"
+  "/(demo)/peugeot/page": "app/(demo)/peugeot/page.js",
+  "/(demo)/nissan/page": "app/(demo)/nissan/page.js",
+  "/(demo)/foton/page": "app/(demo)/foton/page.js",
+  "/(demo)/car/[name]/page": "app/(demo)/car/[name]/page.js"
 }
