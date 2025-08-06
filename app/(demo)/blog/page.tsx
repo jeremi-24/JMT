@@ -17,6 +17,7 @@ export default function Page() {
     });
   };
   
+  console.log("documents:", documents);
 
   return (
     <div className="min-h-screen dark:bg-transparent bg-gray-100">

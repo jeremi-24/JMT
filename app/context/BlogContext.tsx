@@ -16,6 +16,7 @@ interface BlogContextType {
   documents: Blog[];
   loading: boolean;
   error: string | null;
+  
 }
 
 // Création du contexte
@@ -32,6 +33,7 @@ interface WordPressPost {
   title: { rendered: string };
   content: { rendered: string };
   date: string;
+  jetpack_featured_media_url?: string;
 }
 
 export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
@@ -54,10 +56,13 @@ export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
         const formattedBlogs: Blog[] = data.map((post) => ({
           id: post.id.toString(),
           titre: post.title.rendered,
-          image: extractImagesFromContent(post.content.rendered),
+          image: post.jetpack_featured_media_url
+            ? [post.jetpack_featured_media_url]
+            : extractImagesFromContent(post.content.rendered),
           texte: post.content.rendered,
           date: post.date,
         }));
+        
 
         setDocuments(formattedBlogs);
       } catch (err) {
