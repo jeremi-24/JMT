@@ -1,8 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
-  "/(demo)/peugeot/page": "app/(demo)/peugeot/page.js",
   "/(demo)/nissan/page": "app/(demo)/nissan/page.js",
   "/(demo)/foton/page": "app/(demo)/foton/page.js",
+  "/(demo)/peugeot/page": "app/(demo)/peugeot/page.js",
   "/(demo)/car/[name]/page": "app/(demo)/car/[name]/page.js"
 }
