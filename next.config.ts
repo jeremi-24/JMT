@@ -5,7 +5,15 @@ const nextConfig: NextConfig = {
    // Utilise l'option export pour la génération statique
   
   images: {
-    unoptimized: true, // Désactive l'optimisation des images (utile en export statique)
+    unoptimized: true, 
+    domains: [
+      "cms.japanmotorstogo.com",
+      "imprimantezone.fr",
+      "i1.adis.ws",
+      "pic.clubic.com",
+      "gfx3.senetic.com",
+      "djd1xqjx2kdnv.cloudfront.net",
+    ],
   },
 };
 
