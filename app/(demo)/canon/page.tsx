@@ -131,6 +131,7 @@ const Home: React.FC = () => {
               cible="canon"
             />
           ))}
+   
         </div>
       </div>
 
@@ -142,8 +143,7 @@ const Home: React.FC = () => {
         <Link href="/contact">
           <h5 className="px-6 py-3 bg-[#c3002f] text-white rounded-xl shadow-md hover:bg-red-700 transition">
             Contactez-nous dès maintenant !
-          </h5>          console.log("Image URL:", doc.image);
-
+          </h5>
         </Link>
       </div>
     </main>
