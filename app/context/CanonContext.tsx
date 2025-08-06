@@ -54,6 +54,7 @@ export const CanonProvider: React.FC<CanonProviderProps> = ({ children }) => {
           ...doc.data(),
         })) as Canon[]; // Casting des données
         setDocuments(fetchedDocs);
+        console.log(fetchedDocs);
         setLoading(false);
       },
       (err) => {
