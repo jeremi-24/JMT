@@ -1,9 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-   // Utilise l'option export pour la génération statique
-  
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     unoptimized: true, 
     domains: [
@@ -17,4 +13,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
