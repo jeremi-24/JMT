@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js",
+    "start": "node --max-old-space-size=512 server.js",
     "export": "next export",
     "lint": "next lint"
   },
